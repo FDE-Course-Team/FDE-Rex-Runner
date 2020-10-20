@@ -1,0 +1,20 @@
+{
+    "folders":[
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "python.pythonPath":
+        "D:/Program_Files/Anaconda3/envs/py3/python.exe",
+        "python.condaPath":"D:/Program_Files/Anaconda3/Scripts",
+        "python.venvPath": "D:/Program_Files/Anaconda3/envs/py3",
+        "terminal.integrated.shell.windows": "C:/Windows/System32/cmd.exe",
+        "terminal.integrated.shellArgs.windows": ["/K","activate","py3"],
+        "terminal.integrated.automationShell.windows":"D:/Program_Files/Git/bin/bash.exe",
+        "terminal.integrated.env.windows": {"task_lang":"python",
+                                            "python_env": "py3"
+                                        },
+                                        "editor.wordWrap": "on",
+    },
+}
