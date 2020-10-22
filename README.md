@@ -74,7 +74,7 @@ master: (output clock, output en, output [47:0]content)
 之所以content设计为48位，是为了能够更方便地在Host中作出处理。详见Host指令集设计。
 
 ------
-## Host内的指令集
+## Host内的指令集(编辑中)
 
 只做一般的指令集，不计划做任何流水线设计，否则项目进度可能因此耽误。
 
