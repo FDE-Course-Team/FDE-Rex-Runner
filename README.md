@@ -62,16 +62,18 @@ Host发送给GPU的信号旨在告知GPU，将存储在Texture中```addr```处�
 由于游戏有时需要将贴图的一部分显示出来，坐标```(x,y)```需要有负数范围，以便将图像的左下角定位在屏幕之外，从而显示贴图的一部分。上文已经设定了width、height的范围，因此坐标```(x,y)```的范围考虑为```((-256~255),(-64~63))```。可使用有符号整型```int```的设计。<br>
 
 由此，端口宽度不妨设计成：<br>
-master: (output clock, output en, output [47:0]content)
+master: (output en, output [47:0]content)
 ```
 (        16         )(    8    )(   2+6   )(     9     )(   7    )
 [xxxx_xxxx_xxxx_xxxx][xxxx_xxxx][00xx_xxxx][xxxx_xxxx_x][xxxx_xxx]
 [  addr in Texture  ][  width  ][ height  ][     x     ][   y    ]
 ```
-当clock上升沿且en为1时，将content写入slave。<br>
+当clock上升沿且en为1时，将content写入slave。写入完后，通常要将en置为0，以避免重复的数据写入。<br>
 本质上是给Host开放一个写入GPU的任务空间的端口。<br>
 注意到这种端口并非指定地址式的写入端口(clk,addr,q,wr)，而是队列式的(clk,content)。<br>
 之所以content设计为48位，是为了能够更方便地在Host中作出处理。详见Host指令集设计。
+
+注意，Host和GPU接受的时钟周期必须频率一致，否则可能GPU会接收到重复的指令。
 
 ------
 ## Host内的指令集(编辑中)
@@ -82,8 +84,22 @@ master: (output clock, output en, output [47:0]content)
 ```
 [op][addr][data]
 ```
-寄存器堆数目：16？
-内存空间大小：？
+指令表
+|机器码|汇编代码|含义|
+|-|-|-|
+||nop|什么也不做，等待一个周期|
+||add r1,#0x33|将0x33加到r1上|
+||||
+||||
+||||
+
+寄存器堆数目：16？（包含特殊寄存器）<br>
+其中特殊寄存器有：rgpu0, rgpu1, rgpu2, rgpu3
+
+内存空间大小：64?
+
+
+
 指令例子：（汇编）<br>
 ```
 mov r0,#30
@@ -92,6 +108,12 @@ mov 45,r2
 add r0,r1
 ```
 Host内部设有一个程序指针，名为PC，指向当前指令在指令栈中的地址。如果当前指令是分支跳转指令，则跳转到相应地址，否则PC+=1。
+
+------
+
+## 编译器
+
+需要设计一个适用于Host及其指令集的汇编代码“编译器”。具体可使用python制作一个文字处理软件，将汇编代码文件（文本格式）按照指令表翻译成机器码，然后转录成Host中存储命令的RAM模块（或是生成.mif文件）。
 
 ------
 ## GPU内部设计
