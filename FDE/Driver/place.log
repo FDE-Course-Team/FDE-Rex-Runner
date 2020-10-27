@@ -1,0 +1,33 @@
+[2020-10-27, 16:56:47.230866] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 16:56:47.233849] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 16:56:47.233849] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 16:56:47.478442] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 16:56:47.481490] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 16:56:47.482439] place: INFO : Effort Level  : 10
+[2020-10-27, 16:56:47.482439] place: INFO : Mode          : Bounding Box
+[2020-10-27, 16:56:47.488488] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 16:56:47.488488] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 16:56:47.488488] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 16:56:47.488488] place: INFO :   * Amount of IOB: 25
+[2020-10-27, 16:56:47.488488] place: INFO :   * Amount of SLICE: 55
+[2020-10-27, 16:56:47.488488] place: INFO :   * Amount of Net: 138
+[2020-10-27, 16:56:47.488488] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 16:56:47.488488] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 16:56:47.488488] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 16:56:47.488488] place: INFO :   * Proportion of IOB: 17.61%
+[2020-10-27, 16:56:47.488488] place: INFO :   * Proportion of SLICE(LUT0): 1.79%
+[2020-10-27, 16:56:47.495438] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 16:56:47.541495] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 16:56:47.544440] place: INFO :   * Initial cost = 71.4839
+[2020-10-27, 16:56:47.544440] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 16:56:48.042479] place: INFO :   * After 20 iterations cost = 69.2419
+[2020-10-27, 16:56:48.415501] place: INFO :   * After 40 iterations cost = 43.5645
+[2020-10-27, 16:56:48.692492] place: INFO :   * After 60 iterations cost = 24.3548
+[2020-10-27, 16:56:48.998490] place: INFO :   * After 80 iterations cost = 15.871
+[2020-10-27, 16:56:49.255450] place: INFO :   * After 100 iterations cost = 11.8226
+[2020-10-27, 16:56:49.381480] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 16:56:49.395439] place: INFO :   * Final cost = 10.7097
+[2020-10-27, 16:56:49.395439] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 16:56:49.408439] place: INFO : Successfully finish placement. Elapsed Time: 2s

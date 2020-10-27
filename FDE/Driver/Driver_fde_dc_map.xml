@@ -1,0 +1,1428 @@
+<design name="Driver">
+	<external name="cell_lib">
+		<module name="IPAD" type="MACRO">
+			<port name="PAD" direction="input"/>
+		</module>
+		<module name="LOGIC_1" type="MACRO">
+			<property name="truthtable" value="|1"/>
+			<port name="LOGIC_1_PIN" direction="output"/>
+		</module>
+		<module name="LOGIC_0" type="MACRO">
+			<property name="truthtable" value="|0"/>
+			<port name="LOGIC_0_PIN" direction="output"/>
+		</module>
+		<module name="LUT2" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="LUT4" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="ADR2" direction="input"/>
+			<port name="ADR3" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="LUT3" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="ADR2" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="INV" type="COMB">
+			<property name="truthtable" value="0"/>
+			<port name="A" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="CLKBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="OBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="DFFSHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="SN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="OPAD" type="MACRO">
+			<port name="PAD" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="Driver">
+			<port name="clk" direction="input"/>
+			<port name="rstn" direction="input"/>
+			<port name="start_i" direction="input"/>
+			<port name="addr_o" msb="9" lsb="0" direction="output"/>
+			<port name="db_o" msb="7" lsb="0" direction="output"/>
+			<port name="cs_o" msb="1" lsb="0" direction="output"/>
+			<port name="dori_o" direction="output"/>
+			<port name="en_o" direction="output"/>
+			<port name="rw_o" direction="output"/>
+			<contents>
+				<instance name="clk_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="rstn_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="start_i_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="VCC" moduleRef="LOGIC_1" libraryRef="cell_lib"/>
+				<instance name="GND" moduleRef="LOGIC_0" libraryRef="cell_lib"/>
+				<instance name="Lut-U165_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U166_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U167_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U168_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U169_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U170_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U171_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U172_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U95_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FADD"/>
+				</instance>
+				<instance name="Lut-U104_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="9B"/>
+				</instance>
+				<instance name="Lut-U115_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="2E"/>
+				</instance>
+				<instance name="Lut-U117_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="2E"/>
+				</instance>
+				<instance name="Lut-U120_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5455"/>
+				</instance>
+				<instance name="Lut-U106_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8C7F"/>
+				</instance>
+				<instance name="Lut-U107_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="47"/>
+				</instance>
+				<instance name="Lut-U100_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="101F"/>
+				</instance>
+				<instance name="Lut-U132_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="F707"/>
+				</instance>
+				<instance name="Lut-U129_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="07D7"/>
+				</instance>
+				<instance name="Lut-U84_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="07D7"/>
+				</instance>
+				<instance name="Lut-U137_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="8B"/>
+				</instance>
+				<instance name="Lut-U96_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="DDD1"/>
+				</instance>
+				<instance name="Lut-U94_2" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="02"/>
+				</instance>
+				<instance name="Lut-U92_2" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="02"/>
+				</instance>
+				<instance name="Lut-U149_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5541"/>
+				</instance>
+				<instance name="Lut-U148_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5541"/>
+				</instance>
+				<instance name="Lut-U147_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5541"/>
+				</instance>
+				<instance name="Lut-U90_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5155"/>
+				</instance>
+				<instance name="Lut-U146_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5551"/>
+				</instance>
+				<instance name="Lut-U88_1" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="01"/>
+				</instance>
+				<instance name="Lut-U150_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U160_0_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U152_0_1" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="Lut-U123_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="B333"/>
+				</instance>
+				<instance name="Lut-U145_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="01"/>
+				</instance>
+				<instance name="Lut-U116_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5253"/>
+				</instance>
+				<instance name="Lut-U121_0_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="1015"/>
+				</instance>
+				<instance name="Lut-U118_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4A4B"/>
+				</instance>
+				<instance name="Lut-U125_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FC3E"/>
+				</instance>
+				<instance name="Lut-U156_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="20"/>
+				</instance>
+				<instance name="Lut-U122_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="5B"/>
+				</instance>
+				<instance name="Lut-U112_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="7F0F"/>
+				</instance>
+				<instance name="Lut-U109_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="Lut-U103_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0001"/>
+				</instance>
+				<instance name="Lut-U102_0_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="Lut-U135_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0002"/>
+				</instance>
+				<instance name="Lut-U133_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="00B3"/>
+				</instance>
+				<instance name="Lut-U142_0_1" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="A2"/>
+				</instance>
+				<instance name="Lut-U143_1" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="Lut-U140_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="00B3"/>
+				</instance>
+				<instance name="Lut-U139_0_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="Lut-U99_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="Lut-U98_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="2220"/>
+				</instance>
+				<instance name="Lut-U98_1_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0055"/>
+				</instance>
+				<instance name="Lut-U94_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FEFA"/>
+				</instance>
+				<instance name="Lut-U94_2_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5541"/>
+				</instance>
+				<instance name="Lut-U94_3_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A8AA"/>
+				</instance>
+				<instance name="Lut-U92_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FEFA"/>
+				</instance>
+				<instance name="Lut-U92_2_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5541"/>
+				</instance>
+				<instance name="Lut-U92_3_1" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A8AA"/>
+				</instance>
+				<instance name="Lut-U149_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U148_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U147_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U90_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U146_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U88_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="22"/>
+				</instance>
+				<instance name="Lut-U88_1_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="88D8"/>
+				</instance>
+				<instance name="Lut-U88_2_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5554"/>
+				</instance>
+				<instance name="Lut-U150_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A200"/>
+				</instance>
+				<instance name="Lut-U150_1_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0200"/>
+				</instance>
+				<instance name="Lut-U152_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0080"/>
+				</instance>
+				<instance name="Lut-U124_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="0D"/>
+				</instance>
+				<instance name="Lut-U127_0_2" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="Lut-U110_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0002"/>
+				</instance>
+				<instance name="Lut-U142_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="EE"/>
+				</instance>
+				<instance name="Lut-U139_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0002"/>
+				</instance>
+				<instance name="Lut-U140_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0001"/>
+				</instance>
+				<instance name="Lut-U141_0_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="22A2"/>
+				</instance>
+				<instance name="Lut-U141_1_0" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="88D8"/>
+				</instance>
+				<instance name="Lut-U151_0_1" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="A2"/>
+				</instance>
+				<instance name="Lut-U163_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="02"/>
+				</instance>
+				<instance name="Lut-U158_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="10"/>
+				</instance>
+				<instance name="Lut-U94_3_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U92_3_0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Lut-U151_0_0" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="D9"/>
+				</instance>
+				<instance name="Inv-db_o[5]" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="Inv-db_o[2]" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="Inv-db_o[1]" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="Inv-cs_o[0]" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="Lut-U95_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U104_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U115_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U117_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U106_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U107_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U100_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U132_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U129_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U84_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U137_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U96_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U149_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U148_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U147_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U90_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U146_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Lut-U150_0InvLut" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="5"/>
+				</instance>
+				<instance name="Buf-pad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="IBuf-clkpad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-rstn" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-start_i" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[9]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[8]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[7]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[6]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[5]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[4]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[3]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[2]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-addr_o[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[7]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[6]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[5]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[4]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[3]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[2]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-db_o[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-cs_o[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-cs_o[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-dori_o" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-en_o" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-rw_o" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="start_history_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="x_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="state_reg[2]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="state_reg[0]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="state_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="x_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="x_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="x_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="y_reg[5]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[5]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[6]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[7]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="dori_o_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ins_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="addr_o[9]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[8]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[7]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[6]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[5]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[4]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[3]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[2]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="addr_o[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[7]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[6]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[5]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[4]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[3]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[2]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="db_o[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="cs_o[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="cs_o[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="dori_o_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="en_o_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="rw_o_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="PAD" instanceRef="clk_ipad"/>
+					<portRef name="I" instanceRef="Buf-pad-clk"/>
+				</net>
+				<net name="rstn">
+					<portRef name="rstn"/>
+					<portRef name="PAD" instanceRef="rstn_ipad"/>
+					<portRef name="I" instanceRef="Buf-pad-rstn"/>
+				</net>
+				<net name="start_i">
+					<portRef name="start_i"/>
+					<portRef name="PAD" instanceRef="start_i_ipad"/>
+					<portRef name="I" instanceRef="Buf-pad-start_i"/>
+				</net>
+				<net name="net_ins_reg[7]">
+					<portRef name="Q" instanceRef="ins_reg[7]"/>
+					<portRef name="ADR0" instanceRef="Lut-U165_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U146_0_0"/>
+				</net>
+				<net name="net_dori_o_reg">
+					<portRef name="Q" instanceRef="dori_o_reg"/>
+					<portRef name="ADR1" instanceRef="Lut-U165_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U166_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U167_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U168_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U169_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U170_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U171_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U172_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U88_2_0"/>
+					<portRef name="I" instanceRef="Buf-pad-dori_o"/>
+				</net>
+				<net name="net_ins_reg[6]">
+					<portRef name="Q" instanceRef="ins_reg[6]"/>
+					<portRef name="ADR0" instanceRef="Lut-U166_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U90_0_0"/>
+				</net>
+				<net name="net_ins_reg[5]">
+					<portRef name="Q" instanceRef="ins_reg[5]"/>
+					<portRef name="ADR1" instanceRef="Lut-U167_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U149_0_0"/>
+				</net>
+				<net name="net_ins_reg[4]">
+					<portRef name="Q" instanceRef="ins_reg[4]"/>
+					<portRef name="ADR0" instanceRef="Lut-U168_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U148_0_0"/>
+				</net>
+				<net name="net_ins_reg[3]">
+					<portRef name="Q" instanceRef="ins_reg[3]"/>
+					<portRef name="ADR0" instanceRef="Lut-U169_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U147_0_0"/>
+				</net>
+				<net name="net_ins_reg[2]">
+					<portRef name="Q" instanceRef="ins_reg[2]"/>
+					<portRef name="ADR1" instanceRef="Lut-U170_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U94_2_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U94_3_0"/>
+				</net>
+				<net name="net_ins_reg[1]">
+					<portRef name="Q" instanceRef="ins_reg[1]"/>
+					<portRef name="ADR1" instanceRef="Lut-U171_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U92_2_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U92_3_0"/>
+				</net>
+				<net name="net_ins_reg[0]">
+					<portRef name="Q" instanceRef="ins_reg[0]"/>
+					<portRef name="ADR0" instanceRef="Lut-U172_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U150_0_0"/>
+				</net>
+				<net name="net_Lut-U160_0_0">
+					<portRef name="O" instanceRef="Lut-U160_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U95_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U88_1_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U141_1_0"/>
+				</net>
+				<net name="net_state_reg[2]">
+					<portRef name="Q" instanceRef="state_reg[2]"/>
+					<portRef name="ADR1" instanceRef="Lut-U95_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U115_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U149_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U148_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U147_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U90_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U146_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U145_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U116_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U121_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U118_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U125_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U156_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U122_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U103_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U135_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U94_2_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U94_3_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U92_2_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U92_3_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U88_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U88_1_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U88_2_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U150_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U152_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U110_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U142_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U139_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U140_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U141_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U163_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U158_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U151_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-rw_o"/>
+				</net>
+				<net name="net_Lut-U152_0_1">
+					<portRef name="O" instanceRef="Lut-U152_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U95_0"/>
+				</net>
+				<net name="net_y_reg[0]">
+					<portRef name="Q" instanceRef="y_reg[0]"/>
+					<portRef name="ADR3" instanceRef="Lut-U95_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U132_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U129_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U133_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U143_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U139_0_1"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[0]"/>
+				</net>
+				<net name="net_Lut-U123_1">
+					<portRef name="O" instanceRef="Lut-U123_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U104_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U120_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U106_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U121_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U112_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U109_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U102_0_1"/>
+				</net>
+				<net name="net_x_reg[0]">
+					<portRef name="Q" instanceRef="x_reg[0]"/>
+					<portRef name="ADR1" instanceRef="Lut-U104_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U106_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U112_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U150_1_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U127_0_2"/>
+					<portRef name="ADR0" instanceRef="Lut-U110_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[6]"/>
+				</net>
+				<net name="net_Lut-U145_0_0">
+					<portRef name="O" instanceRef="Lut-U145_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U104_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U106_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U129_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U84_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U112_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U133_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U140_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U98_1_0"/>
+				</net>
+				<net name="net_Lut-U116_0">
+					<portRef name="O" instanceRef="Lut-U116_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U115_0"/>
+				</net>
+				<net name="net_Lut-U121_0_1">
+					<portRef name="O" instanceRef="Lut-U121_0_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U115_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U117_0"/>
+				</net>
+				<net name="net_Lut-U118_0">
+					<portRef name="O" instanceRef="Lut-U118_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U117_0"/>
+				</net>
+				<net name="net_state_reg[0]">
+					<portRef name="Q" instanceRef="state_reg[0]"/>
+					<portRef name="ADR2" instanceRef="Lut-U117_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U149_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U148_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U147_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U90_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U146_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U160_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U145_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U116_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U121_0_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U118_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U125_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U156_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U122_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U103_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U135_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U94_2_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U94_3_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U92_2_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U92_3_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U88_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U88_2_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U150_1_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U152_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U110_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U142_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U139_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U140_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U163_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U158_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U151_0_0"/>
+				</net>
+				<net name="net_Lut-U125_1">
+					<portRef name="O" instanceRef="Lut-U125_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U120_0_0"/>
+				</net>
+				<net name="net_Lut-U156_0">
+					<portRef name="O" instanceRef="Lut-U156_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U120_0_0"/>
+				</net>
+				<net name="net_Lut-U122_0">
+					<portRef name="O" instanceRef="Lut-U122_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U120_0_0"/>
+				</net>
+				<net name="net_x_reg[1]">
+					<portRef name="Q" instanceRef="x_reg[1]"/>
+					<portRef name="ADR3" instanceRef="Lut-U106_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U112_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U109_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U102_0_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U92_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U127_0_2"/>
+					<portRef name="ADR1" instanceRef="Lut-U92_3_0"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[7]"/>
+				</net>
+				<net name="net_Lut-U112_0">
+					<portRef name="O" instanceRef="Lut-U112_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U107_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U100_0"/>
+				</net>
+				<net name="net_x_reg[2]">
+					<portRef name="Q" instanceRef="x_reg[2]"/>
+					<portRef name="ADR1" instanceRef="Lut-U107_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U103_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U102_0_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U94_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U127_0_2"/>
+					<portRef name="ADR1" instanceRef="Lut-U94_3_0"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[8]"/>
+				</net>
+				<net name="net_Lut-U109_0_0">
+					<portRef name="O" instanceRef="Lut-U109_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U107_0"/>
+				</net>
+				<net name="net_Lut-U103_0_0">
+					<portRef name="O" instanceRef="Lut-U103_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U100_0"/>
+				</net>
+				<net name="net_x_reg[3]">
+					<portRef name="Q" instanceRef="x_reg[3]"/>
+					<portRef name="ADR2" instanceRef="Lut-U100_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U127_0_2"/>
+					<portRef name="A" instanceRef="Inv-cs_o[0]"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[9]"/>
+					<portRef name="I" instanceRef="Buf-pad-cs_o[1]"/>
+				</net>
+				<net name="net_Lut-U102_0_1">
+					<portRef name="O" instanceRef="Lut-U102_0_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U100_0"/>
+				</net>
+				<net name="net_Lut-U135_0_0">
+					<portRef name="O" instanceRef="Lut-U135_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U132_0"/>
+				</net>
+				<net name="net_y_reg[2]">
+					<portRef name="Q" instanceRef="y_reg[2]"/>
+					<portRef name="ADR2" instanceRef="Lut-U132_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U143_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U139_0_1"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[2]"/>
+				</net>
+				<net name="net_Lut-U133_0">
+					<portRef name="O" instanceRef="Lut-U133_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U132_0"/>
+				</net>
+				<net name="net_y_reg[1]">
+					<portRef name="Q" instanceRef="y_reg[1]"/>
+					<portRef name="ADR2" instanceRef="Lut-U129_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U135_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U133_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U143_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U139_0_1"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[1]"/>
+				</net>
+				<net name="net_Lut-U142_0_1">
+					<portRef name="O" instanceRef="Lut-U142_0_1"/>
+					<portRef name="ADR3" instanceRef="Lut-U129_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U84_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U133_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U140_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U98_1_0"/>
+				</net>
+				<net name="net_Lut-U143_1">
+					<portRef name="O" instanceRef="Lut-U143_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U84_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U140_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U99_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U98_1_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U141_0_0"/>
+				</net>
+				<net name="net_y_reg[3]">
+					<portRef name="Q" instanceRef="y_reg[3]"/>
+					<portRef name="ADR2" instanceRef="Lut-U84_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U140_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U98_1_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U139_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U140_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[3]"/>
+				</net>
+				<net name="net_Lut-U140_0">
+					<portRef name="O" instanceRef="Lut-U140_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U137_0"/>
+				</net>
+				<net name="net_y_reg[4]">
+					<portRef name="Q" instanceRef="y_reg[4]"/>
+					<portRef name="ADR1" instanceRef="Lut-U137_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U123_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U99_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U98_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[4]"/>
+				</net>
+				<net name="net_Lut-U139_0_1">
+					<portRef name="O" instanceRef="Lut-U139_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U137_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U123_1"/>
+				</net>
+				<net name="net_Lut-U99_0_0">
+					<portRef name="O" instanceRef="Lut-U99_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U96_0"/>
+				</net>
+				<net name="net_y_reg[5]">
+					<portRef name="Q" instanceRef="y_reg[5]"/>
+					<portRef name="ADR1" instanceRef="Lut-U96_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U123_1"/>
+					<portRef name="I" instanceRef="Buf-pad-addr_o[5]"/>
+				</net>
+				<net name="net_Lut-U98_0_0">
+					<portRef name="O" instanceRef="Lut-U98_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U96_0"/>
+				</net>
+				<net name="net_Lut-U98_1_0">
+					<portRef name="O" instanceRef="Lut-U98_1_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U96_0"/>
+				</net>
+				<net name="net_Lut-U94_0">
+					<portRef name="O" instanceRef="Lut-U94_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U94_2"/>
+				</net>
+				<net name="net_Lut-U94_2_1">
+					<portRef name="O" instanceRef="Lut-U94_2_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U94_2"/>
+				</net>
+				<net name="net_Lut-U94_3_1">
+					<portRef name="O" instanceRef="Lut-U94_3_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U94_2"/>
+				</net>
+				<net name="net_Lut-U92_0">
+					<portRef name="O" instanceRef="Lut-U92_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U92_2"/>
+				</net>
+				<net name="net_Lut-U92_2_1">
+					<portRef name="O" instanceRef="Lut-U92_2_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U92_2"/>
+				</net>
+				<net name="net_Lut-U92_3_1">
+					<portRef name="O" instanceRef="Lut-U92_3_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U92_2"/>
+				</net>
+				<net name="net_Lut-U149_0_0">
+					<portRef name="O" instanceRef="Lut-U149_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U149_0"/>
+				</net>
+				<net name="net_state_reg[1]">
+					<portRef name="Q" instanceRef="state_reg[1]"/>
+					<portRef name="ADR1" instanceRef="Lut-U149_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U148_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U147_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U90_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U146_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U160_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U145_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U116_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U121_0_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U118_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U125_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U156_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U122_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U103_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U135_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U94_2_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U94_3_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U92_2_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U92_3_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U88_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U88_2_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U150_1_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U152_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U110_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U142_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U139_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U140_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U163_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U158_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U151_0_0"/>
+				</net>
+				<net name="net_Lut-U148_0_0">
+					<portRef name="O" instanceRef="Lut-U148_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U148_0"/>
+				</net>
+				<net name="net_Lut-U147_0_0">
+					<portRef name="O" instanceRef="Lut-U147_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U147_0"/>
+				</net>
+				<net name="net_Lut-U90_0_0">
+					<portRef name="O" instanceRef="Lut-U90_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U90_0"/>
+				</net>
+				<net name="net_Lut-U146_0_0">
+					<portRef name="O" instanceRef="Lut-U146_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U146_0"/>
+				</net>
+				<net name="net_Lut-U88_0_0">
+					<portRef name="O" instanceRef="Lut-U88_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U88_1"/>
+				</net>
+				<net name="net_Lut-U88_1_0">
+					<portRef name="O" instanceRef="Lut-U88_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U88_1"/>
+				</net>
+				<net name="net_Lut-U88_2_0">
+					<portRef name="O" instanceRef="Lut-U88_2_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U88_1"/>
+				</net>
+				<net name="net_Lut-U150_0_0">
+					<portRef name="O" instanceRef="Lut-U150_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U150_0"/>
+				</net>
+				<net name="net_Lut-U150_1_0">
+					<portRef name="O" instanceRef="Lut-U150_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U150_0"/>
+				</net>
+				<net name="net_Lut-U152_0_0">
+					<portRef name="O" instanceRef="Lut-U152_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U152_0_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U142_0_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U149_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U148_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U147_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U90_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U146_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U88_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U150_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U124_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U141_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U141_1_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U151_0_1"/>
+				</net>
+				<net name="net_Buf-pad-start_i">
+					<portRef name="O" instanceRef="Buf-pad-start_i"/>
+					<portRef name="ADR1" instanceRef="Lut-U152_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U142_0_1"/>
+					<portRef name="ADR2" instanceRef="Lut-U149_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U148_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U147_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U90_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U146_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U88_1_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U150_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U124_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U141_0_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U141_1_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U151_0_1"/>
+					<portRef name="D" instanceRef="start_history_reg"/>
+				</net>
+				<net name="net_Lut-U124_0">
+					<portRef name="O" instanceRef="Lut-U124_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U123_1"/>
+				</net>
+				<net name="net_Lut-U127_0_2">
+					<portRef name="O" instanceRef="Lut-U127_0_2"/>
+					<portRef name="ADR3" instanceRef="Lut-U116_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U118_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U125_1"/>
+				</net>
+				<net name="net_Lut-U110_0_0">
+					<portRef name="O" instanceRef="Lut-U110_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U109_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U102_0_1"/>
+				</net>
+				<net name="net_Lut-U142_0_0">
+					<portRef name="O" instanceRef="Lut-U142_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U142_0_1"/>
+					<portRef name="ADR1" instanceRef="Lut-U141_0_0"/>
+				</net>
+				<net name="net_Lut-U139_0_0">
+					<portRef name="O" instanceRef="Lut-U139_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U139_0_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U99_0_0"/>
+				</net>
+				<net name="net_Lut-U140_0_0">
+					<portRef name="O" instanceRef="Lut-U140_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U98_0_0"/>
+				</net>
+				<net name="net_Lut-U141_0_0">
+					<portRef name="O" instanceRef="Lut-U141_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U98_0_0"/>
+				</net>
+				<net name="net_Lut-U141_1_0">
+					<portRef name="O" instanceRef="Lut-U141_1_0"/>
+					<portRef name="ADR3" instanceRef="Lut-U98_0_0"/>
+				</net>
+				<net name="net_Lut-U151_0_1">
+					<portRef name="O" instanceRef="Lut-U151_0_1"/>
+					<portRef name="ADR0" instanceRef="Lut-U94_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U92_0"/>
+				</net>
+				<net name="net_Lut-U163_0_0">
+					<portRef name="O" instanceRef="Lut-U163_0_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U94_0"/>
+					<portRef name="ADR1" instanceRef="Lut-U92_0"/>
+				</net>
+				<net name="net_Lut-U158_0_0">
+					<portRef name="O" instanceRef="Lut-U158_0_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U94_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U92_0"/>
+					<portRef name="ADR2" instanceRef="Lut-U124_0"/>
+				</net>
+				<net name="net_Lut-U94_3_0">
+					<portRef name="O" instanceRef="Lut-U94_3_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U94_3_1"/>
+				</net>
+				<net name="net_Lut-U92_3_0">
+					<portRef name="O" instanceRef="Lut-U92_3_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U92_3_1"/>
+				</net>
+				<net name="net_Lut-U151_0_0">
+					<portRef name="O" instanceRef="Lut-U151_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U149_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U148_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U147_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U90_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U146_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U150_0_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U151_0_1"/>
+				</net>
+				<net name="net_start_history_reg">
+					<portRef name="Q" instanceRef="start_history_reg"/>
+					<portRef name="ADR0" instanceRef="Lut-U152_0_0"/>
+				</net>
+				<net name="net_Lut-U167_0">
+					<portRef name="O" instanceRef="Lut-U167_0"/>
+					<portRef name="A" instanceRef="Inv-db_o[5]"/>
+				</net>
+				<net name="net_Lut-U170_0">
+					<portRef name="O" instanceRef="Lut-U170_0"/>
+					<portRef name="A" instanceRef="Inv-db_o[2]"/>
+				</net>
+				<net name="net_Lut-U171_0">
+					<portRef name="O" instanceRef="Lut-U171_0"/>
+					<portRef name="A" instanceRef="Inv-db_o[1]"/>
+				</net>
+				<net name="net_Lut-U95_0">
+					<portRef name="O" instanceRef="Lut-U95_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U95_0InvLut"/>
+				</net>
+				<net name="net_VCC">
+					<portRef name="LOGIC_1_PIN" instanceRef="VCC"/>
+					<portRef name="ADR1" instanceRef="Lut-U95_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U104_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U115_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U117_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U106_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U107_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U100_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U132_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U129_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U84_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U137_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U96_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U149_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U148_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U147_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U90_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U146_0InvLut"/>
+					<portRef name="ADR1" instanceRef="Lut-U150_0InvLut"/>
+				</net>
+				<net name="net_Lut-U104_0">
+					<portRef name="O" instanceRef="Lut-U104_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U104_0InvLut"/>
+				</net>
+				<net name="net_Lut-U115_0">
+					<portRef name="O" instanceRef="Lut-U115_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U115_0InvLut"/>
+				</net>
+				<net name="net_Lut-U117_0">
+					<portRef name="O" instanceRef="Lut-U117_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U117_0InvLut"/>
+				</net>
+				<net name="net_Lut-U106_0">
+					<portRef name="O" instanceRef="Lut-U106_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U106_0InvLut"/>
+				</net>
+				<net name="net_Lut-U107_0">
+					<portRef name="O" instanceRef="Lut-U107_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U107_0InvLut"/>
+				</net>
+				<net name="net_Lut-U100_0">
+					<portRef name="O" instanceRef="Lut-U100_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U100_0InvLut"/>
+				</net>
+				<net name="net_Lut-U132_0">
+					<portRef name="O" instanceRef="Lut-U132_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U132_0InvLut"/>
+				</net>
+				<net name="net_Lut-U129_0">
+					<portRef name="O" instanceRef="Lut-U129_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U129_0InvLut"/>
+				</net>
+				<net name="net_Lut-U84_0">
+					<portRef name="O" instanceRef="Lut-U84_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U84_0InvLut"/>
+				</net>
+				<net name="net_Lut-U137_0">
+					<portRef name="O" instanceRef="Lut-U137_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U137_0InvLut"/>
+				</net>
+				<net name="net_Lut-U96_0">
+					<portRef name="O" instanceRef="Lut-U96_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U96_0InvLut"/>
+				</net>
+				<net name="net_Lut-U149_0">
+					<portRef name="O" instanceRef="Lut-U149_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U149_0InvLut"/>
+				</net>
+				<net name="net_Lut-U148_0">
+					<portRef name="O" instanceRef="Lut-U148_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U148_0InvLut"/>
+				</net>
+				<net name="net_Lut-U147_0">
+					<portRef name="O" instanceRef="Lut-U147_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U147_0InvLut"/>
+				</net>
+				<net name="net_Lut-U90_0">
+					<portRef name="O" instanceRef="Lut-U90_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U90_0InvLut"/>
+				</net>
+				<net name="net_Lut-U146_0">
+					<portRef name="O" instanceRef="Lut-U146_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U146_0InvLut"/>
+				</net>
+				<net name="net_Lut-U150_0">
+					<portRef name="O" instanceRef="Lut-U150_0"/>
+					<portRef name="ADR0" instanceRef="Lut-U150_0InvLut"/>
+				</net>
+				<net name="net_Buf-pad-clk">
+					<portRef name="O" instanceRef="Buf-pad-clk"/>
+					<portRef name="I" instanceRef="IBuf-clkpad-clk"/>
+				</net>
+				<net name="net_Lut-U165_0_0">
+					<portRef name="O" instanceRef="Lut-U165_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[7]"/>
+				</net>
+				<net name="net_Lut-U166_0_0">
+					<portRef name="O" instanceRef="Lut-U166_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[6]"/>
+				</net>
+				<net name="net_Inv-db_o[5]">
+					<portRef name="Y" instanceRef="Inv-db_o[5]"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[5]"/>
+				</net>
+				<net name="net_Lut-U168_0_0">
+					<portRef name="O" instanceRef="Lut-U168_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[4]"/>
+				</net>
+				<net name="net_Lut-U169_0_0">
+					<portRef name="O" instanceRef="Lut-U169_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[3]"/>
+				</net>
+				<net name="net_Inv-db_o[2]">
+					<portRef name="Y" instanceRef="Inv-db_o[2]"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[2]"/>
+				</net>
+				<net name="net_Inv-db_o[1]">
+					<portRef name="Y" instanceRef="Inv-db_o[1]"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[1]"/>
+				</net>
+				<net name="net_Lut-U172_0_0">
+					<portRef name="O" instanceRef="Lut-U172_0_0"/>
+					<portRef name="I" instanceRef="Buf-pad-db_o[0]"/>
+				</net>
+				<net name="net_Inv-cs_o[0]">
+					<portRef name="Y" instanceRef="Inv-cs_o[0]"/>
+					<portRef name="I" instanceRef="Buf-pad-cs_o[0]"/>
+				</net>
+				<net name="net_IBuf-clkpad-clk" type="clock">
+					<portRef name="O" instanceRef="IBuf-clkpad-clk"/>
+					<portRef name="I" instanceRef="Buf-pad-en_o"/>
+					<portRef name="CK" instanceRef="start_history_reg"/>
+					<portRef name="CK" instanceRef="y_reg[0]"/>
+					<portRef name="CK" instanceRef="x_reg[0]"/>
+					<portRef name="CK" instanceRef="state_reg[2]"/>
+					<portRef name="CK" instanceRef="state_reg[0]"/>
+					<portRef name="CK" instanceRef="state_reg[1]"/>
+					<portRef name="CK" instanceRef="x_reg[1]"/>
+					<portRef name="CK" instanceRef="x_reg[2]"/>
+					<portRef name="CK" instanceRef="x_reg[3]"/>
+					<portRef name="CK" instanceRef="y_reg[2]"/>
+					<portRef name="CK" instanceRef="y_reg[1]"/>
+					<portRef name="CK" instanceRef="y_reg[3]"/>
+					<portRef name="CK" instanceRef="y_reg[4]"/>
+					<portRef name="CK" instanceRef="y_reg[5]"/>
+					<portRef name="CK" instanceRef="ins_reg[2]"/>
+					<portRef name="CK" instanceRef="ins_reg[1]"/>
+					<portRef name="CK" instanceRef="ins_reg[5]"/>
+					<portRef name="CK" instanceRef="ins_reg[4]"/>
+					<portRef name="CK" instanceRef="ins_reg[3]"/>
+					<portRef name="CK" instanceRef="ins_reg[6]"/>
+					<portRef name="CK" instanceRef="ins_reg[7]"/>
+					<portRef name="CK" instanceRef="dori_o_reg"/>
+					<portRef name="CK" instanceRef="ins_reg[0]"/>
+				</net>
+				<net name="net_Buf-pad-rstn" type="reset">
+					<portRef name="O" instanceRef="Buf-pad-rstn"/>
+					<portRef name="RN" instanceRef="start_history_reg"/>
+					<portRef name="RN" instanceRef="y_reg[0]"/>
+					<portRef name="RN" instanceRef="x_reg[0]"/>
+					<portRef name="SN" instanceRef="state_reg[2]"/>
+					<portRef name="SN" instanceRef="state_reg[0]"/>
+					<portRef name="RN" instanceRef="state_reg[1]"/>
+					<portRef name="RN" instanceRef="x_reg[1]"/>
+					<portRef name="RN" instanceRef="x_reg[2]"/>
+					<portRef name="RN" instanceRef="x_reg[3]"/>
+					<portRef name="RN" instanceRef="y_reg[2]"/>
+					<portRef name="RN" instanceRef="y_reg[1]"/>
+					<portRef name="RN" instanceRef="y_reg[3]"/>
+					<portRef name="RN" instanceRef="y_reg[4]"/>
+					<portRef name="RN" instanceRef="y_reg[5]"/>
+					<portRef name="RN" instanceRef="ins_reg[2]"/>
+					<portRef name="RN" instanceRef="ins_reg[1]"/>
+					<portRef name="RN" instanceRef="ins_reg[5]"/>
+					<portRef name="RN" instanceRef="ins_reg[4]"/>
+					<portRef name="RN" instanceRef="ins_reg[3]"/>
+					<portRef name="RN" instanceRef="ins_reg[6]"/>
+					<portRef name="RN" instanceRef="ins_reg[7]"/>
+					<portRef name="RN" instanceRef="dori_o_reg"/>
+					<portRef name="RN" instanceRef="ins_reg[0]"/>
+				</net>
+				<net name="net_Lut-U95_0InvLut">
+					<portRef name="O" instanceRef="Lut-U95_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[0]"/>
+				</net>
+				<net name="net_Lut-U104_0InvLut">
+					<portRef name="O" instanceRef="Lut-U104_0InvLut"/>
+					<portRef name="D" instanceRef="x_reg[0]"/>
+				</net>
+				<net name="net_Lut-U115_0InvLut">
+					<portRef name="O" instanceRef="Lut-U115_0InvLut"/>
+					<portRef name="D" instanceRef="state_reg[2]"/>
+				</net>
+				<net name="net_Lut-U117_0InvLut">
+					<portRef name="O" instanceRef="Lut-U117_0InvLut"/>
+					<portRef name="D" instanceRef="state_reg[0]"/>
+				</net>
+				<net name="net_Lut-U120_0_0">
+					<portRef name="O" instanceRef="Lut-U120_0_0"/>
+					<portRef name="D" instanceRef="state_reg[1]"/>
+				</net>
+				<net name="net_Lut-U106_0InvLut">
+					<portRef name="O" instanceRef="Lut-U106_0InvLut"/>
+					<portRef name="D" instanceRef="x_reg[1]"/>
+				</net>
+				<net name="net_Lut-U107_0InvLut">
+					<portRef name="O" instanceRef="Lut-U107_0InvLut"/>
+					<portRef name="D" instanceRef="x_reg[2]"/>
+				</net>
+				<net name="net_Lut-U100_0InvLut">
+					<portRef name="O" instanceRef="Lut-U100_0InvLut"/>
+					<portRef name="D" instanceRef="x_reg[3]"/>
+				</net>
+				<net name="net_Lut-U132_0InvLut">
+					<portRef name="O" instanceRef="Lut-U132_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[2]"/>
+				</net>
+				<net name="net_Lut-U129_0InvLut">
+					<portRef name="O" instanceRef="Lut-U129_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[1]"/>
+				</net>
+				<net name="net_Lut-U84_0InvLut">
+					<portRef name="O" instanceRef="Lut-U84_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[3]"/>
+				</net>
+				<net name="net_Lut-U137_0InvLut">
+					<portRef name="O" instanceRef="Lut-U137_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[4]"/>
+				</net>
+				<net name="net_Lut-U96_0InvLut">
+					<portRef name="O" instanceRef="Lut-U96_0InvLut"/>
+					<portRef name="D" instanceRef="y_reg[5]"/>
+				</net>
+				<net name="net_Lut-U94_2">
+					<portRef name="O" instanceRef="Lut-U94_2"/>
+					<portRef name="D" instanceRef="ins_reg[2]"/>
+				</net>
+				<net name="net_Lut-U92_2">
+					<portRef name="O" instanceRef="Lut-U92_2"/>
+					<portRef name="D" instanceRef="ins_reg[1]"/>
+				</net>
+				<net name="net_Lut-U149_0InvLut">
+					<portRef name="O" instanceRef="Lut-U149_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[5]"/>
+				</net>
+				<net name="net_Lut-U148_0InvLut">
+					<portRef name="O" instanceRef="Lut-U148_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[4]"/>
+				</net>
+				<net name="net_Lut-U147_0InvLut">
+					<portRef name="O" instanceRef="Lut-U147_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[3]"/>
+				</net>
+				<net name="net_Lut-U90_0InvLut">
+					<portRef name="O" instanceRef="Lut-U90_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[6]"/>
+				</net>
+				<net name="net_Lut-U146_0InvLut">
+					<portRef name="O" instanceRef="Lut-U146_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[7]"/>
+				</net>
+				<net name="net_Lut-U88_1">
+					<portRef name="O" instanceRef="Lut-U88_1"/>
+					<portRef name="D" instanceRef="dori_o_reg"/>
+				</net>
+				<net name="net_Lut-U150_0InvLut">
+					<portRef name="O" instanceRef="Lut-U150_0InvLut"/>
+					<portRef name="D" instanceRef="ins_reg[0]"/>
+				</net>
+				<net name="addr_o[9]">
+					<portRef name="PAD" instanceRef="addr_o[9]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[9]"/>
+					<portRef name="addr_o[9]"/>
+				</net>
+				<net name="addr_o[8]">
+					<portRef name="PAD" instanceRef="addr_o[8]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[8]"/>
+					<portRef name="addr_o[8]"/>
+				</net>
+				<net name="addr_o[7]">
+					<portRef name="PAD" instanceRef="addr_o[7]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[7]"/>
+					<portRef name="addr_o[7]"/>
+				</net>
+				<net name="addr_o[6]">
+					<portRef name="PAD" instanceRef="addr_o[6]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[6]"/>
+					<portRef name="addr_o[6]"/>
+				</net>
+				<net name="addr_o[5]">
+					<portRef name="PAD" instanceRef="addr_o[5]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[5]"/>
+					<portRef name="addr_o[5]"/>
+				</net>
+				<net name="addr_o[4]">
+					<portRef name="PAD" instanceRef="addr_o[4]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[4]"/>
+					<portRef name="addr_o[4]"/>
+				</net>
+				<net name="addr_o[3]">
+					<portRef name="PAD" instanceRef="addr_o[3]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[3]"/>
+					<portRef name="addr_o[3]"/>
+				</net>
+				<net name="addr_o[2]">
+					<portRef name="PAD" instanceRef="addr_o[2]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[2]"/>
+					<portRef name="addr_o[2]"/>
+				</net>
+				<net name="addr_o[1]">
+					<portRef name="PAD" instanceRef="addr_o[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[1]"/>
+					<portRef name="addr_o[1]"/>
+				</net>
+				<net name="addr_o[0]">
+					<portRef name="PAD" instanceRef="addr_o[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-addr_o[0]"/>
+					<portRef name="addr_o[0]"/>
+				</net>
+				<net name="db_o[7]">
+					<portRef name="PAD" instanceRef="db_o[7]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[7]"/>
+					<portRef name="db_o[7]"/>
+				</net>
+				<net name="db_o[6]">
+					<portRef name="PAD" instanceRef="db_o[6]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[6]"/>
+					<portRef name="db_o[6]"/>
+				</net>
+				<net name="db_o[5]">
+					<portRef name="PAD" instanceRef="db_o[5]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[5]"/>
+					<portRef name="db_o[5]"/>
+				</net>
+				<net name="db_o[4]">
+					<portRef name="PAD" instanceRef="db_o[4]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[4]"/>
+					<portRef name="db_o[4]"/>
+				</net>
+				<net name="db_o[3]">
+					<portRef name="PAD" instanceRef="db_o[3]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[3]"/>
+					<portRef name="db_o[3]"/>
+				</net>
+				<net name="db_o[2]">
+					<portRef name="PAD" instanceRef="db_o[2]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[2]"/>
+					<portRef name="db_o[2]"/>
+				</net>
+				<net name="db_o[1]">
+					<portRef name="PAD" instanceRef="db_o[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[1]"/>
+					<portRef name="db_o[1]"/>
+				</net>
+				<net name="db_o[0]">
+					<portRef name="PAD" instanceRef="db_o[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-db_o[0]"/>
+					<portRef name="db_o[0]"/>
+				</net>
+				<net name="cs_o[1]">
+					<portRef name="PAD" instanceRef="cs_o[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-cs_o[1]"/>
+					<portRef name="cs_o[1]"/>
+				</net>
+				<net name="cs_o[0]">
+					<portRef name="PAD" instanceRef="cs_o[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-cs_o[0]"/>
+					<portRef name="cs_o[0]"/>
+				</net>
+				<net name="dori_o">
+					<portRef name="PAD" instanceRef="dori_o_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-dori_o"/>
+					<portRef name="dori_o"/>
+				</net>
+				<net name="en_o">
+					<portRef name="PAD" instanceRef="en_o_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-en_o"/>
+					<portRef name="en_o"/>
+				</net>
+				<net name="rw_o">
+					<portRef name="PAD" instanceRef="rw_o_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-rw_o"/>
+					<portRef name="rw_o"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="Driver" libraryRef="work_lib"/>
+</design>
+
