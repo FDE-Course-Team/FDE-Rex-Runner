@@ -33,7 +33,7 @@ always begin
     #5
     clk=~clk;
     if(clk) data[7:0]=addr[7:0];
-    $display("db %b, dori %b, cs %b, en %b, rw %b, rst_o %b",db,dori,cs,en,rw,rst_o);
+    $display("addr %b, db %b, dori %b, cs %b, en %b, rw %b, rst_o %b",addr, db,dori,cs,en,rw,rst_o);
 end
 
 endmodule
