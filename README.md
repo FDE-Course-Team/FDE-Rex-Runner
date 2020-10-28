@@ -35,6 +35,8 @@
 
 # Top Design
 
+![](2020-10-28-11-54-41.png)
+
 使用两块LCD_Graphic设备拼接成一块长屏幕。（初代版本只做一块LCD_Graphic）<br>
 - Driver 输入：data，start输出：addr，以及通向LCD_Graphic的端口。包办LCD_Graphic的指令，向Decider输出addr以获取对应位置的图像信息data。start信号从低到高变化时（同步信号，并非上升沿）开始图像写入。<br>
 - Decider 接到Driver的是dataD和addrD，接到Texture的是dataT和addrT，并且从GameCenter获取游戏状态。作用是根据当前游戏状态，响应Driver的图像需求。<br>
@@ -79,7 +81,7 @@ GameCenter向Devider展示的信息有：state（游戏状态），jump_height,b
 Top design、Report、Decider：张朕银<br>
 Driver：薛玥<br>
 Decider、PPT：张盼<br>
-Host：郭家兴<br>
+GameCenter：郭家兴<br>
 Texture：万欣然<br>
 有余力的同学可以辅助其他部分的设计和验证，工作量最终写入报告中。
 

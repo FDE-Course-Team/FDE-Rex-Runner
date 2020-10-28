@@ -4,7 +4,7 @@ module Driver(
 
     start_i,
     addr_o,
-    // data_i,
+    data_i,
 
     db_o,
     dori_o,
@@ -19,9 +19,10 @@ input rstn;
 input start_i;
 reg start_history;
 output [9:0]addr_o;//one LCD_Graphic
-// input [7:0]data_i;
-wire [7:0]data_i;//debug
-assign data_i=8'b00100110;//debug
+input [7:0]data_i;
+// wire [7:0]data_i;//debug
+// assign data_i=8'b00100110;//debug
+output reg rst_o;
 
 output [7:0]db_o;
 output [1:0]cs_o;
@@ -62,9 +63,9 @@ always@(posedge clk or negedge rstn)begin
     end
     else begin
         rst_o<=0;
-        start_history<=start_i;
         en_o<=~en_o;
         if(!en_o)begin
+            start_history<=start_i;
             case(state)
                 CLEAR:begin//about to clear
                     ins<=8'b0011_1110;
@@ -114,7 +115,6 @@ always@(posedge clk or negedge rstn)begin
                 end
             endcase    
         end
-        
     end
 end
 
