@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version H-2013.03 for amd64 -- Feb 25, 2013
-#@ # Date:   Wed Oct 28 07:14:22 2020
+#@ # Date:   Wed Oct 28 08:09:51 2020
 #@ # Run by: allenwal@localhost.localdomain
 #@ 
 
@@ -4802,11 +4802,11 @@ source compile.tcl ; exit
 #@ # Function		: DC scripts
 #@ #====================================================================
 #@ 
-#@ set SRC_HOME			"/mnt/hgfs/share/Driver/v_src"
+#@ set SRC_HOME			"/mnt/hgfs/Driver/v_src"
 #@ set LIB_HOME			"/home/allenwalker/project/lib"
 #@ set LIBRARY_NAME	"fde_dc"
 #@ set FILE_LIST			"Driver"
-#@ set RESULT_HOME		"/mnt/hgfs/share/Driver/result"
+#@ set RESULT_HOME		"/mnt/hgfs/Driver/result"
 #@ 
 #@ #set WIRELOAD_NAME "ForQA"
 #@ 

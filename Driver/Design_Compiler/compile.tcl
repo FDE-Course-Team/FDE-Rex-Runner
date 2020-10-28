@@ -5,11 +5,11 @@
 # Function		: DC scripts
 #====================================================================
 
-set SRC_HOME			"/mnt/hgfs/share/Driver/v_src"
+set SRC_HOME			"/mnt/hgfs/Driver/v_src"
 set LIB_HOME			"/home/allenwalker/project/lib"
 set LIBRARY_NAME	"fde_dc"
 set FILE_LIST			"Driver"
-set RESULT_HOME		"/mnt/hgfs/share/Driver/result"
+set RESULT_HOME		"/mnt/hgfs/Driver/result"
 
 #set WIRELOAD_NAME "ForQA"
 

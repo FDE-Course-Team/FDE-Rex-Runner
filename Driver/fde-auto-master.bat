@@ -8,6 +8,8 @@ copy /Y .\Driver.v %sharePath%\v_src\Driver.v
 
 echo Driver > %sharePath%\DC-Start.txt
 
+echo waiting for Design Compiler...
+
 :loop
 
 sleepx 1
@@ -17,7 +19,6 @@ if exist %sharePath%\DC-Done.txt (
     copy /Y %sharePath%\result\Driver_gate.v .\Driver_gate.v
     del %sharePath%\result\Driver_gate.v
 ) else (
-    echo waiting...
     goto loop
 )
 
