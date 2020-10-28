@@ -63,7 +63,6 @@ always@(posedge clk or negedge rstn)begin
         y<=0;
         x<=0;
         state<=HALT;
-
     end
     else begin
         rst_o<=0;
@@ -97,7 +96,7 @@ always@(posedge clk or negedge rstn)begin
                     y<=y+1;
                 end
                 TOSHOW:begin//when TOSHOW, must have sent all data, prepare to show and stop processing.
-                    db_o<=8'b0011_1110;
+                    db_o<=8'b0011_1111;
                     dori_o<=0;
                     state<=HALT;
                 end
