@@ -1,21 +1,21 @@
 @echo off
 @REM setlocal EnableDelayedExpansion
 
-set sharePath=E:\Virtual_Machines\share\
+set sharePath=.\Design_Compiler
 set SMIMSPath=D:\Program_Files\SMIMS\
 
-copy /Y .\Driver.v %sharePath%\Driver\v_src\Driver.v
+copy /Y .\Driver.v %sharePath%\v_src\Driver.v
 
-echo Driver > %sharePath%\Driver\DC-Start.txt
+echo Driver > %sharePath%\DC-Start.txt
 
 :loop
 
 sleepx 1
 
-if exist %sharePath%\Driver\DC-Done.txt (
-    del %sharePath%\Driver\DC-Done.txt
-    copy /Y %sharePath%\Driver\result\Driver_gate.v .\Driver_gate.v
-    del %sharePath%\Driver\result\Driver_gate.v
+if exist %sharePath%\DC-Done.txt (
+    del %sharePath%\DC-Done.txt
+    copy /Y %sharePath%\result\Driver_gate.v .\Driver_gate.v
+    del %sharePath%\result\Driver_gate.v
 ) else (
     echo waiting...
     goto loop
