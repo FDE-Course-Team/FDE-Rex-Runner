@@ -1,0 +1,201 @@
+[2020-10-27, 17:22:21.231146] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:22:21.234147] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:22:21.234147] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:22:21.443155] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:22:21.446169] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:22:21.446169] place: INFO : Effort Level  : 10
+[2020-10-27, 17:22:21.446169] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:22:21.452118] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:22:21.452118] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:22:21.452118] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:22:21.452118] place: INFO :   * Amount of IOB: 25
+[2020-10-27, 17:22:21.452118] place: INFO :   * Amount of SLICE: 46
+[2020-10-27, 17:22:21.452118] place: INFO :   * Amount of Net: 120
+[2020-10-27, 17:22:21.453118] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:22:21.453118] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:22:21.453118] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:22:21.453118] place: INFO :   * Proportion of IOB: 17.61%
+[2020-10-27, 17:22:21.453118] place: INFO :   * Proportion of SLICE(LUT0): 1.50%
+[2020-10-27, 17:22:21.453118] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:22:21.497178] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:22:21.499170] place: INFO :   * Initial cost = 65.8226
+[2020-10-27, 17:22:21.499170] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:22:21.929422] place: INFO :   * After 20 iterations cost = 57.2903
+[2020-10-27, 17:22:22.363430] place: INFO :   * After 40 iterations cost = 36.5806
+[2020-10-27, 17:22:22.690423] place: INFO :   * After 60 iterations cost = 22.0806
+[2020-10-27, 17:22:22.969423] place: INFO :   * After 80 iterations cost = 12.7258
+[2020-10-27, 17:22:23.189459] place: INFO :   * After 100 iterations cost = 9.85484
+[2020-10-27, 17:22:23.305469] place: INFO :   * After 120 iterations cost = 9.20968
+[2020-10-27, 17:22:23.317423] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:22:23.322468] place: INFO :   * Final cost = 9.20968
+[2020-10-27, 17:22:23.322468] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:22:23.334470] place: INFO : Successfully finish placement. Elapsed Time: 2s
+[2020-10-27, 17:26:31.996241] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:26:31.999241] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:26:31.999241] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:26:32.246284] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:26:32.252244] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:26:32.252244] place: INFO : Effort Level  : 10
+[2020-10-27, 17:26:32.252244] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:26:32.260364] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:26:32.260364] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:26:32.260364] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:26:32.260364] place: INFO :   * Amount of IOB: 25
+[2020-10-27, 17:26:32.260364] place: INFO :   * Amount of SLICE: 46
+[2020-10-27, 17:26:32.260364] place: INFO :   * Amount of Net: 120
+[2020-10-27, 17:26:32.260364] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:26:32.260364] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:26:32.260364] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:26:32.260364] place: INFO :   * Proportion of IOB: 17.61%
+[2020-10-27, 17:26:32.260364] place: INFO :   * Proportion of SLICE(LUT0): 1.50%
+[2020-10-27, 17:26:32.261378] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:26:32.333361] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:26:32.336337] place: INFO :   * Initial cost = 65.8226
+[2020-10-27, 17:26:32.336337] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:26:32.820682] place: INFO :   * After 20 iterations cost = 57.2903
+[2020-10-27, 17:26:33.118666] place: INFO :   * After 40 iterations cost = 36.5806
+[2020-10-27, 17:26:33.340630] place: INFO :   * After 60 iterations cost = 22.0806
+[2020-10-27, 17:26:33.614682] place: INFO :   * After 80 iterations cost = 12.7258
+[2020-10-27, 17:26:33.826666] place: INFO :   * After 100 iterations cost = 9.85484
+[2020-10-27, 17:26:33.942682] place: INFO :   * After 120 iterations cost = 9.20968
+[2020-10-27, 17:26:33.946682] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:26:33.951682] place: INFO :   * Final cost = 9.20968
+[2020-10-27, 17:26:33.952683] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:26:33.963681] place: INFO : Successfully finish placement. Elapsed Time: 2s
+[2020-10-27, 17:37:20.522706] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:37:20.525706] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:37:20.525706] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:37:20.713706] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:37:20.716706] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:37:20.716706] place: INFO : Effort Level  : 10
+[2020-10-27, 17:37:20.716706] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:37:20.722746] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:37:20.722746] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:37:20.722746] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:37:20.722746] place: INFO :   * Amount of IOB: 26
+[2020-10-27, 17:37:20.722746] place: INFO :   * Amount of SLICE: 45
+[2020-10-27, 17:37:20.723748] place: INFO :   * Amount of Net: 119
+[2020-10-27, 17:37:20.723748] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:37:20.723748] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:37:20.723748] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:37:20.723748] place: INFO :   * Proportion of IOB: 18.31%
+[2020-10-27, 17:37:20.723748] place: INFO :   * Proportion of SLICE(LUT0): 1.46%
+[2020-10-27, 17:37:20.723748] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:37:20.787705] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:37:20.789711] place: INFO :   * Initial cost = 53.9032
+[2020-10-27, 17:37:20.789711] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:37:21.200708] place: INFO :   * After 20 iterations cost = 56.0323
+[2020-10-27, 17:37:21.503718] place: INFO :   * After 40 iterations cost = 41.2419
+[2020-10-27, 17:37:21.725062] place: INFO :   * After 60 iterations cost = 21.0323
+[2020-10-27, 17:37:21.982064] place: INFO :   * After 80 iterations cost = 12.2258
+[2020-10-27, 17:37:22.198062] place: INFO :   * After 100 iterations cost = 10.129
+[2020-10-27, 17:37:22.364023] place: INFO :   * After 120 iterations cost = 9.20968
+[2020-10-27, 17:37:22.373065] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:37:22.379028] place: INFO :   * Final cost = 9.20968
+[2020-10-27, 17:37:22.379028] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:37:22.392027] place: INFO : Successfully finish placement. Elapsed Time: 2s
+[2020-10-27, 17:40:15.735414] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:40:15.738414] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:40:15.738414] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:40:15.923385] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:40:15.926385] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:40:15.927385] place: INFO : Effort Level  : 10
+[2020-10-27, 17:40:15.927385] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:40:15.933438] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:40:15.933438] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:40:15.933438] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:40:15.933438] place: INFO :   * Amount of IOB: 26
+[2020-10-27, 17:40:15.933438] place: INFO :   * Amount of SLICE: 46
+[2020-10-27, 17:40:15.933438] place: INFO :   * Amount of Net: 120
+[2020-10-27, 17:40:15.933438] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:40:15.933438] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:40:15.933438] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:40:15.933438] place: INFO :   * Proportion of IOB: 18.31%
+[2020-10-27, 17:40:15.933438] place: INFO :   * Proportion of SLICE(LUT0): 1.50%
+[2020-10-27, 17:40:15.934439] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:40:15.975438] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:40:15.976440] place: INFO :   * Initial cost = 57.7097
+[2020-10-27, 17:40:15.976440] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:40:16.381385] place: INFO :   * After 20 iterations cost = 50.1613
+[2020-10-27, 17:40:16.648388] place: INFO :   * After 40 iterations cost = 32.9839
+[2020-10-27, 17:40:16.886423] place: INFO :   * After 60 iterations cost = 18.0323
+[2020-10-27, 17:40:17.138388] place: INFO :   * After 80 iterations cost = 12.5323
+[2020-10-27, 17:40:17.421423] place: INFO :   * After 100 iterations cost = 9.64516
+[2020-10-27, 17:40:17.547391] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:40:17.555387] place: INFO :   * Final cost = 9.32258
+[2020-10-27, 17:40:17.556387] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:40:17.571386] place: INFO : Successfully finish placement. Elapsed Time: 2s
+[2020-10-27, 17:42:05.637675] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:42:05.639675] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:42:05.640674] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:42:05.824715] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:42:05.826717] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:42:05.827715] place: INFO : Effort Level  : 10
+[2020-10-27, 17:42:05.827715] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:42:05.833727] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:42:05.833727] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:42:05.833727] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:42:05.833727] place: INFO :   * Amount of IOB: 26
+[2020-10-27, 17:42:05.833727] place: INFO :   * Amount of SLICE: 46
+[2020-10-27, 17:42:05.833727] place: INFO :   * Amount of Net: 120
+[2020-10-27, 17:42:05.833727] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:42:05.833727] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:42:05.833727] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:42:05.833727] place: INFO :   * Proportion of IOB: 18.31%
+[2020-10-27, 17:42:05.833727] place: INFO :   * Proportion of SLICE(LUT0): 1.50%
+[2020-10-27, 17:42:05.834727] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:42:05.874720] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:42:05.875716] place: INFO :   * Initial cost = 58.8065
+[2020-10-27, 17:42:05.875716] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:42:06.285729] place: INFO :   * After 20 iterations cost = 49.3548
+[2020-10-27, 17:42:06.575712] place: INFO :   * After 40 iterations cost = 34.0968
+[2020-10-27, 17:42:06.810731] place: INFO :   * After 60 iterations cost = 19.8065
+[2020-10-27, 17:42:07.065712] place: INFO :   * After 80 iterations cost = 12.5
+[2020-10-27, 17:42:07.285219] place: INFO :   * After 100 iterations cost = 10.0323
+[2020-10-27, 17:42:07.422294] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:42:07.428276] place: INFO :   * Final cost = 9.41935
+[2020-10-27, 17:42:07.429278] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:42:07.443263] place: INFO : Successfully finish placement. Elapsed Time: 2s
+[2020-10-27, 17:46:43.826328] place: INFO : Release 1.0 - Place
+Copyright (c) 2006-2009 FPGA-SoftwareGP.MEKeylab.FDU   All rights reserved.
+
+[2020-10-27, 17:46:43.829292] place: INFO : Progress    0%: parsing commands ...
+[2020-10-27, 17:46:43.829292] place: INFO : Progress   10%: loading arch library "D:\Program_Files\FDE2019\hw_lib\fdp3p7_arch.xml" ...
+[2020-10-27, 17:46:44.010341] place: INFO : Progress   20%: loading netlist "Driver_fde_dc_pack.xml" ...
+[2020-10-27, 17:46:44.014294] place: INFO : Progress   30%: loading constraint "D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\Driver\src\Driver_gate.xml" ...
+[2020-10-27, 17:46:44.014294] place: INFO : Effort Level  : 10
+[2020-10-27, 17:46:44.014294] place: INFO : Mode          : Bounding Box
+[2020-10-27, 17:46:44.020293] place: INFO : Design        : "Driver", resource statistic:
+[2020-10-27, 17:46:44.020293] place: INFO :   * Amount of GCLK: 1
+[2020-10-27, 17:46:44.020293] place: INFO :   * Amount of GCLKIOB: 1
+[2020-10-27, 17:46:44.020293] place: INFO :   * Amount of IOB: 26
+[2020-10-27, 17:46:44.020293] place: INFO :   * Amount of SLICE: 49
+[2020-10-27, 17:46:44.020293] place: INFO :   * Amount of Net: 127
+[2020-10-27, 17:46:44.020293] place: INFO : Device        : "fdp3000k", resource usage:
+[2020-10-27, 17:46:44.020293] place: INFO :   * Proportion of GCLK: 25.00%
+[2020-10-27, 17:46:44.020293] place: INFO :   * Proportion of GCLKIOB: 25.00%
+[2020-10-27, 17:46:44.020293] place: INFO :   * Proportion of IOB: 18.31%
+[2020-10-27, 17:46:44.020293] place: INFO :   * Proportion of SLICE(LUT0): 1.60%
+[2020-10-27, 17:46:44.021347] place: INFO : Progress   50%: build FPGA architecture ...
+[2020-10-27, 17:46:44.064290] place: INFO : Progress   60%: begin to initially place ...
+[2020-10-27, 17:46:44.066291] place: INFO :   * Initial cost = 64.0645
+[2020-10-27, 17:46:44.066291] place: INFO : Progress   70%: begin to perform place iteration ...
+[2020-10-27, 17:46:44.499292] place: INFO :   * After 20 iterations cost = 57.9839
+[2020-10-27, 17:46:44.803325] place: INFO :   * After 40 iterations cost = 37.4677
+[2020-10-27, 17:46:45.051346] place: INFO :   * After 60 iterations cost = 20.9516
+[2020-10-27, 17:46:45.325345] place: INFO :   * After 80 iterations cost = 13.4516
+[2020-10-27, 17:46:45.543148] place: INFO :   * After 100 iterations cost = 11.5
+[2020-10-27, 17:46:45.650159] place: INFO : Progress   80%: begin to perform final place iteration ...
+[2020-10-27, 17:46:45.655158] place: INFO :   * Final cost = 10.5
+[2020-10-27, 17:46:45.655158] place: INFO : Progress   90%: begin to write placed netlist ...
+[2020-10-27, 17:46:45.668145] place: INFO : Successfully finish placement. Elapsed Time: 2s

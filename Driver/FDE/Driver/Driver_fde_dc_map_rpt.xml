@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type='text/xsl' href='fdu_report.xsl'?>
+<report design="Driver_fde_dc">
+	<section id="Type_Count" label="Type Count">
+		<table id="General_Table">
+			<column id="Type_Name" label="Type Name"/>
+			<column id="Count" label="Count"/>
+			<row id="1">
+				<item id="Type_Name" value="Latch"/>
+				<item id="Count" value="25"/>
+			</row>
+			<row id="2">
+				<item id="Type_Name" value="Latch_DFFRHQ"/>
+				<item id="Count" value="22"/>
+			</row>
+			<row id="3">
+				<item id="Type_Name" value="Latch_DFFSHQ"/>
+				<item id="Count" value="3"/>
+			</row>
+			<row id="4">
+				<item id="Type_Name" value="Lut"/>
+				<item id="Count" value="89"/>
+			</row>
+			<row id="5">
+				<item id="Type_Name" value="Lut2"/>
+				<item id="Count" value="36"/>
+			</row>
+			<row id="6">
+				<item id="Type_Name" value="Lut3"/>
+				<item id="Count" value="14"/>
+			</row>
+			<row id="7">
+				<item id="Type_Name" value="Lut4"/>
+				<item id="Count" value="39"/>
+			</row>
+			<row id="8">
+				<item id="Type_Name" value="Macro"/>
+				<item id="Count" value="2"/>
+			</row>
+			<row id="9">
+				<item id="Type_Name" value="Macro_LOGIC_0"/>
+				<item id="Count" value="1"/>
+			</row>
+			<row id="10">
+				<item id="Type_Name" value="Macro_LOGIC_1"/>
+				<item id="Count" value="1"/>
+			</row>
+		</table>
+	</section>
+</report>
+
