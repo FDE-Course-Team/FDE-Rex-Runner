@@ -17,12 +17,11 @@ module Driver(
 input clk;
 input rstn;
 input start_i;
-reg start_history;
+reg [1:0]start_history;
 output [9:0]addr_o;//one LCD_Graphic
 input [7:0]data_i;
 // wire [7:0]data_i;//debug
 // assign data_i=8'b00100110;//debug
-output reg rst_o;
 
 output [7:0]db_o;
 output [1:0]cs_o;
@@ -42,7 +41,7 @@ parameter SETY=3'b011;
 parameter SETX=3'b010;
 parameter READY=3'b001;
 parameter SEND=3'b000;
-
+parameter SHOW=3'b110;
 
 assign db_o=dori_o?data_i:ins;
 assign addr_o[9:0]={x[3:0],y[5:0]};
@@ -64,18 +63,19 @@ always@(posedge clk or negedge rstn)begin
     else begin
         rst_o<=0;
         en_o<=~en_o;
-        if(!en_o)begin
-            start_history<=start_i;
+        start_history[0]<=start_i;
+        start_history[1]<=start_history[0];
+        if(en_o)begin
             case(state)
                 CLEAR:begin//about to clear
-                    ins<=8'b0011_1110;
+                    ins<=8'b0011_1111;
                     state<=SETY;
                     x<=0;
                     y<=0;
                     dori_o<=0;
                 end
                 SETY:begin//about to set Y
-                    ins<=8'b0100_0000;
+                    ins<={2'b01,y[5:0]};
                     state<=SETX;
                     dori_o<=0;
                 end
@@ -93,20 +93,25 @@ always@(posedge clk or negedge rstn)begin
                     if(&y) begin
                         x<=x+1;
                         if(&x)begin
-                            state<=HALT;
+                            state<=SHOW;
                         end
                         else begin
-                            state<=SETX;
+                            state<=SETY;
                         end
                     end
                     dori_o<=1;
                 end
+                SHOW:begin
+                    ins<=8'b0011_1110;
+                    state<=HALT;
+                    dori_o<=0;
+                end
                 HALT:begin//halt
-                    if(start_history==1 && start_i==0)begin
+                    ins<=8'b0000_0000;
+                    if(start_history[1]==1 && start_i==0)begin
                         y<=0;
                         x<=0;
                         state<=CLEAR;
-                        ins<=8'b0000_0000;
                         dori_o<=0;
                     end
                 end

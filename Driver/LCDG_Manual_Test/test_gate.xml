@@ -1,0 +1,33 @@
+<design name="test">
+ <port name="db_o[0]" position="P7"/>
+ <port name="db_o[1]" position="P6"/>
+ <port name="db_o[2]" position="P5"/>
+ <port name="db_o[3]" position="P4"/>
+ <port name="db_o[4]" position="P9"/>
+ <port name="db_o[5]" position="P8"/>
+ <port name="db_o[6]" position="P16"/>
+ <port name="db_o[7]" position="P15"/>
+ <port name="db_i[0]" position="P151"/>
+ <port name="db_i[1]" position="P148"/>
+ <port name="db_i[2]" position="P150"/>
+ <port name="db_i[3]" position="P152"/>
+ <port name="db_i[4]" position="P160"/>
+ <port name="db_i[5]" position="P161"/>
+ <port name="db_i[6]" position="P162"/>
+ <port name="db_i[7]" position="P163"/>
+ <port name="clk" position="P77"/>
+ <port name="rstn" position="P164"/>
+ <port name="dori_i" position="P165"/>
+ <port name="rw_i" position="P166"/>
+ <port name="en_i" position="P169"/>
+ <port name="cs1_i" position="P173"/>
+ <port name="cs2_i" position="P174"/>
+ <port name="rst_i" position="P175"/>
+ <port name="dori_o" position="P11"/>
+ <port name="rw_o" position="P10"/>
+ <port name="en_o" position="P20"/>
+ <port name="cs1_o" position="P18"/>
+ <port name="cs2_o" position="P17"/>
+ <port name="rst_o" position="P22"/>
+
+</design>

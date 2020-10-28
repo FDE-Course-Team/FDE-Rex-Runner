@@ -9,6 +9,14 @@
  <port name="addr_o[7]" position="P15"/>
  <port name="addr_o[8]" position="P11"/>
  <port name="addr_o[9]" position="P10"/>
+ <port name="data_i[0]" position="P151"/>
+ <port name="data_i[1]" position="P148"/>
+ <port name="data_i[2]" position="P150"/>
+ <port name="data_i[3]" position="P152"/>
+ <port name="data_i[4]" position="P160"/>
+ <port name="data_i[5]" position="P161"/>
+ <port name="data_i[6]" position="P162"/>
+ <port name="data_i[7]" position="P163"/>
  <port name="db_o[0]" position="P20"/>
  <port name="db_o[1]" position="P18"/>
  <port name="db_o[2]" position="P17"/>
@@ -20,8 +28,8 @@
  <port name="cs_o[0]" position="P46"/>
  <port name="cs_o[1]" position="P43"/>
  <port name="clk" position="P77"/>
- <port name="rstn" position="P151"/>
- <port name="start_i" position="P148"/>
+ <port name="rstn" position="P164"/>
+ <port name="start_i" position="P165"/>
  <port name="dori_o" position="P40"/>
  <port name="en_o" position="P41"/>
  <port name="rw_o" position="P42"/>

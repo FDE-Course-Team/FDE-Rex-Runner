@@ -7,11 +7,11 @@
 			<column id="Count" label="Count"/>
 			<row id="1">
 				<item id="Type_Name" value="Latch"/>
-				<item id="Count" value="25"/>
+				<item id="Count" value="26"/>
 			</row>
 			<row id="2">
 				<item id="Type_Name" value="Latch_DFFRHQ"/>
-				<item id="Count" value="22"/>
+				<item id="Count" value="23"/>
 			</row>
 			<row id="3">
 				<item id="Type_Name" value="Latch_DFFSHQ"/>
@@ -19,19 +19,19 @@
 			</row>
 			<row id="4">
 				<item id="Type_Name" value="Lut"/>
-				<item id="Count" value="89"/>
+				<item id="Count" value="111"/>
 			</row>
 			<row id="5">
 				<item id="Type_Name" value="Lut2"/>
-				<item id="Count" value="36"/>
+				<item id="Count" value="28"/>
 			</row>
 			<row id="6">
 				<item id="Type_Name" value="Lut3"/>
-				<item id="Count" value="14"/>
+				<item id="Count" value="35"/>
 			</row>
 			<row id="7">
 				<item id="Type_Name" value="Lut4"/>
-				<item id="Count" value="39"/>
+				<item id="Count" value="48"/>
 			</row>
 			<row id="8">
 				<item id="Type_Name" value="Macro"/>

@@ -15,11 +15,11 @@
 			</row>
 			<row id="3">
 				<item id="Type_Name" value="IOB"/>
-				<item id="Count" value="26"/>
+				<item id="Count" value="34"/>
 			</row>
 			<row id="4">
 				<item id="Type_Name" value="SLICE"/>
-				<item id="Count" value="49"/>
+				<item id="Count" value="62"/>
 			</row>
 		</table>
 	</section>
