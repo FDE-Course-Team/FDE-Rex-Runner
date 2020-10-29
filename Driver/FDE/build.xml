@@ -47,12 +47,12 @@
 <property name="xdllibfile_q" value="&quot;${xdllibfile}&quot;"/>
 <property name="interconlib_q" value="&quot;${interconlib}&quot;"/>
 <property name="plcdelayfile_q" value="&quot;${plcdelayfile}&quot;"/>
-<property name=".timestamp" value="1603898304937"/>
+<property name=".timestamp" value="0"/>
 <property name="imp.timestamp" value="0"/>
 <property name="map.timestamp" value="0"/>
 <property name="pack.timestamp" value="0"/>
-<property name="place.timestamp" value="1603878208826"/>
-<property name="route.timestamp" value="1603878208826"/>
+<property name="place.timestamp" value="1603941441111"/>
+<property name="route.timestamp" value="1603941441111"/>
 <property name="sta.timestamp" value="0"/>
 <property name="bit.timestamp" value="0"/>
 <property name="prog.timestamp" value="0"/>
@@ -70,10 +70,10 @@
 <property name="prog.usb.args" value="${bitfile}"/>
 <property name="sta.sim" value="false"/>
 <property name="sta.pnum" value="10"/>
-<property name="place.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
-<property name="place.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
-<property name="route.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
-<property name="route.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
+<property name="place.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
+<property name="place.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
+<property name="route.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
+<property name="route.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Driver\FDE\src\Driver_gate.xml"/>
 <target name="cst.check">
 		<condition property="cst.exist">
 			<available file="${place.cstfile}" type="file"/>

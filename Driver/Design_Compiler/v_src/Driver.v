@@ -11,7 +11,8 @@ module Driver(
     cs_o,
     en_o,
     rw_o,
-    rst_o
+    rst_o,
+    state
 );
 
 input clk;
@@ -32,7 +33,7 @@ output reg rst_o;
 
 reg [5:0]y;
 reg [3:0]x;
-reg [2:0]state;
+output reg [2:0]state;
 
 //state machine
 parameter HALT=3'd7;
@@ -52,9 +53,9 @@ parameter TOSHOW=3'd3;
 assign addr_o[9:0]={x[3:0],y[5:0]};
 assign cs_o[0]=~x[3];//CS1
 assign cs_o[1]=x[3];//CS2
-assign rw_o=state[2];
+assign rw_o=0;
 
-always@(posedge clk or negedge rstn)begin
+always@(posedge clk)begin
     if (!rstn) begin
         db_o<=0;
         en_o<=0;

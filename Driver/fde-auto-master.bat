@@ -4,6 +4,10 @@
 set sharePath=.\Design_Compiler
 set SMIMSPath=D:\Program_Files\SMIMS\
 
+if exist %sharePath%\DC-Done.txt (
+    del /f %sharePath%\DC-Done.txt
+)
+
 copy /Y .\Driver.v %sharePath%\v_src\Driver.v
 
 echo Driver > %sharePath%\DC-Start.txt
@@ -15,9 +19,10 @@ echo waiting for Design Compiler...
 sleepx 1
 
 if exist %sharePath%\DC-Done.txt (
-    del %sharePath%\DC-Done.txt
+    echo Design Compiler responed.
+    del /f %sharePath%\DC-Done.txt
     copy /Y %sharePath%\result\Driver_gate.v .\Driver_gate.v
-    del %sharePath%\result\Driver_gate.v
+    del /f %sharePath%\result\Driver_gate.v
 ) else (
     goto loop
 )

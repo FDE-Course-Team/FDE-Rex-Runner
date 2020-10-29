@@ -27,12 +27,15 @@
  <port name="db_o[7]" position="P45"/>
  <port name="cs_o[0]" position="P46"/>
  <port name="cs_o[1]" position="P43"/>
+ <port name="state[0]" position="P40"/>
+ <port name="state[1]" position="P41"/>
+ <port name="state[2]" position="P42"/>
  <port name="clk" position="P77"/>
  <port name="rstn" position="P164"/>
  <port name="start_i" position="P165"/>
- <port name="dori_o" position="P40"/>
- <port name="en_o" position="P41"/>
- <port name="rw_o" position="P42"/>
- <port name="rst_o" position="P33"/>
+ <port name="dori_o" position="P33"/>
+ <port name="en_o" position="P34"/>
+ <port name="rw_o" position="P35"/>
+ <port name="rst_o" position="P36"/>
 
 </design>
