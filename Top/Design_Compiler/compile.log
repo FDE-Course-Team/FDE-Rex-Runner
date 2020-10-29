@@ -1,0 +1,345 @@
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/FDE_Rex_Runner.v
+Presto compilation completed successfully.
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+Loading db file '/eda/synopsys/dc2013/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/dc2013/libraries/syn/standard.sldb'
+  Loading link library 'fde_dc'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'FDE_Rex_Runner'.
+Information: Re-analyzing the out of date architecture 'Driver(verilog)'. (LBR-15)
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v
+Presto compilation completed successfully.
+Information: Building the design 'Driver'. (HDL-193)
+
+Statistics for case statements in always block at line 60 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            76            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine Driver line 60 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  start_history_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|        x_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     dori_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      rst_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      db_o_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|        y_reg        | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|      en_o_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Decider'. (HDL-193)
+
+Inferred memory devices in process
+	in routine Decider line 99 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/Decider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      addrT_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Texture'. (HDL-193)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 60 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            76            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine Driver line 60 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  start_history_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|        x_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     dori_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      rst_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      db_o_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|        y_reg        | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|      en_o_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Driver.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'Driver'.
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Decider.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine Decider line 99 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/Decider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      addrT_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Decider.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'Decider'.
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Texture.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Texture.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'Texture'.
+Current design is 'FDE_Rex_Runner'.
+Current design is 'FDE_Rex_Runner'.
+
+  Linking design 'FDE_Rex_Runner'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (4 designs)               /mnt/hgfs/FDE_Rex_Runner/FDE_Rex_Runner.db, etc
+  fde_dc (library)            /home/allenwalker/project/lib/fde_dc.db
+
+Information: Updating graph... (UID-83)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 11 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'FDE_Rex_Runner'
+Information: The register 'decider/addrT_reg[15]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[14]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[13]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[12]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[11]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[10]' will be removed. (OPT-1207)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'DW01_add_width5'
+  Processing 'DW01_add_width16'
+  Processing 'DW01_inc_width6'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_add_width16'
+  Processing 'DW02_mult_A_width13_B_width5'
+  Processing 'DW01_add_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_sub_width6'
+  Processing 'DW01_incdec_width6'
+  Processing 'DW01_sub_width7'
+  Processing 'DW01_sub_width16'
+Information: The register 'decider/addrT_reg[0]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[1]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[2]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[3]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[4]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[5]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[6]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[7]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[8]' will be removed. (OPT-1207)
+Information: The register 'decider/addrT_reg[9]' will be removed. (OPT-1207)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'FDE_Rex_Runner'
+  Mapping 'FDE_Rex_Runner'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     258.0      0.00       0.0       0.9                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     260.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Warning: Design has no hierarchy.  No cells can be ungrouped. (UID-228)
+Alib files are up-to-date.
+Loading db file '/eda/synopsys/dc2013/libraries/syn/dw_foundation.sldb'
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.0 |     *     |
+| Licensed DW Building Blocks        | H-2013.03-DWBB_201303.0 |     *     |
+============================================================================
+
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/fde_dc.db.alib'
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     257.0      0.00       0.0       0.0                          
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+    0:00:01     257.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/mnt/hgfs/FDE_Rex_Runner/result/FDE_Rex_Runner_gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1

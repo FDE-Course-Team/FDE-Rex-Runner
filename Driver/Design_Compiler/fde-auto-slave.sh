@@ -1,4 +1,4 @@
-sharePath=/mnt/hgfs/Driver/
+sharePath=.
 
 while true
 do
