@@ -78,7 +78,7 @@ GameCenter向Devider展示的信息有：state（游戏状态），jump_height,b
 
 # 小组工作划分：
 
-Top design、Report、Decider：张朕银<br>
+Top design、Report、Decider、自动化脚本：张朕银<br>
 Driver：薛玥<br>
 Decider、PPT：张盼<br>
 GameCenter：郭家兴<br>
