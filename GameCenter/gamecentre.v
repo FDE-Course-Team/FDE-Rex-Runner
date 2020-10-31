@@ -1,13 +1,15 @@
-//Î´¿ªÊ¼Ê±£¬°´¼üµÚÒ»´Î°´ÏÂÊ±Æô¶¯ÓÎÏ·£¬ËæºóÎªÌøÔ¾¼ü
-//¼Ù¶¨µØÃæ¸ß¶ÈÎª(x,7)
+//2020-10-31
+//ä½œè€…20212020180 éƒ­å®¶å…´
+//æœªå¼€å§‹æ—¶ï¼ŒæŒ‰é”®ç¬¬ä¸€æ¬¡æŒ‰ä¸‹æ—¶å¯åŠ¨æ¸¸æˆï¼Œéšåä¸ºè·³è·ƒé”®
+//å‡å®šåœ°é¢é«˜åº¦ä¸º(x,0)
 module gamecentre(
 									clk,
 									rst,
 									in_up,						//input ,to jump
-									gpu_en,					 //ÃüÁîÊ¹ÄÜ
-									dino_y,				   //Ğ¡¿ÖÁúÎ»ÖÃ(yµÄÆ«ÒÆÁ¿)7bit   0/15/27/34/36 
-									obstacle_x,      //ÕÏ°­ÎïÎ»ÖÃ(xµÄÆ«ÒÆÁ¿)9bit
-									state           //ÓÎÏ·×´Ì¬2bit
+									gpu_en,					 //å‘½ä»¤ä½¿èƒ½
+									dino_y,				   //å°æé¾™ä½ç½®(yçš„åç§»é‡)7bit   0/15/27/34/36 
+									obstacle_x,      //éšœç¢ç‰©ä½ç½®(xçš„åç§»é‡)9bit
+									state           //æ¸¸æˆçŠ¶æ€2bit
 									);
 
 input   				  clk;
@@ -22,34 +24,34 @@ output[1:0]				state;
 reg								gpu_en;
 reg[15:0]    			dino_y; 
 reg[15:0]	  			obstacle_x;	
-reg[1:0]					state;				   //ÓÎÏ·×´Ì¬£¬Ôİ¶¨2Î»
-reg[2:0]    			dino_state;      //dinosaur_state¼ÇÂ¼¿ÖÁúÎ»ÖÃ×´Ì¬
-reg[1:0] 					pin_pos;			   //ÓÃÀ´Ê¶±ğ°´¼üµÄÉÏÉıÑØ
-reg								con_jump;				 //¼ÇÂ¼ÌøÔ¾ÊÇÔÚÉÏÉı»¹ÊÇÏÂ½µ 0ÎªÉÏÉı£¬×ó²à£¬1Î»ÏÂ½µ£¬ÓÒ²à
-reg[9:0]    			con;             //¼ÆÊıÆ÷£¬ÓÃÓÚÕÏ°­Îï·ÖÆµ
-reg[9:0]    			con1;						 //¼ÆÊıÆ÷£¬ÓÃÓÚ¿ÖÁúÌøÔ¾·ÖÆµ
+reg[1:0]					state;				   //æ¸¸æˆçŠ¶æ€ï¼Œæš‚å®š2ä½
+reg[2:0]    			dino_state;      //dinosaur_stateè®°å½•æé¾™ä½ç½®çŠ¶æ€
+reg[1:0] 					pin_pos;			   //ç”¨æ¥è¯†åˆ«æŒ‰é”®çš„ä¸Šå‡æ²¿
+reg								con_jump;				 //è®°å½•è·³è·ƒæ˜¯åœ¨ä¸Šå‡è¿˜æ˜¯ä¸‹é™ 0ä¸ºä¸Šå‡ï¼Œå·¦ä¾§ï¼Œ1ä½ä¸‹é™ï¼Œå³ä¾§
+reg[9:0]    			con;             //è®¡æ•°å™¨ï¼Œç”¨äºéšœç¢ç‰©åˆ†é¢‘
+reg[9:0]    			con1;						 //è®¡æ•°å™¨ï¼Œç”¨äºæé¾™è·³è·ƒåˆ†é¢‘
 
 
-parameter					init = 0;				//³õÊ¼»¯×´Ì¬
-parameter					go   = 1;				//Õı³£ĞĞ½ø×´Ì¬
-parameter					jump = 2;				//ÌøÆğ
-parameter					over = 3;				//ÓÎÏ·½áÊø
-parameter   			dino_go    = 0; //¿ÖÁúÆ½µØ×ß               0
-parameter  				dino_jump1 = 1;	//¿ÖÁúÌøÆğ/ÂäÏÂµÄµÚÒ»¸ß¶È  15
-parameter   			dino_jump2 = 2;	//¿ÖÁúÌøÆğ/ÂäÏÂµÄµÚ¶ş¸ß¶È  27
-parameter   			dino_jump3 = 3;	//¿ÖÁúÌøÆğ/ÂäÏÂµÄµÚÈı¸ß¶È  34
-parameter  			  dino_jump4 = 4;	//¿ÖÁúÌøÆğµÄ×î¸ßÎ»ÖÃ       36
-parameter         dino_x = 16;		//¿ÖÁúµÄ×ó²àºá×ø±ê
-parameter   			dino_x_right = 32;		//¿ÖÁúµÄÓÒ²àºá×ø±ê
-parameter   			obstacle_high= 26;    //ÕÏ°­Îï¸ß¶È
-parameter   			width  = 16;						//ÕÏ°­ÎïµÄ¿í£¬Ôİ¶¨16//////////////////////////////////////////////
-parameter					division = 50;				//·ÖÆµÏµÊı
+parameter					init = 0;				//åˆå§‹åŒ–çŠ¶æ€
+parameter					go   = 1;				//æ­£å¸¸è¡Œè¿›çŠ¶æ€
+parameter					jump = 2;				//è·³èµ·
+parameter					over = 3;				//æ¸¸æˆç»“æŸ
+parameter   			dino_go    = 0; //æé¾™å¹³åœ°èµ°               0
+parameter  				dino_jump1 = 1;	//æé¾™è·³èµ·/è½ä¸‹çš„ç¬¬ä¸€é«˜åº¦  15
+parameter   			dino_jump2 = 2;	//æé¾™è·³èµ·/è½ä¸‹çš„ç¬¬äºŒé«˜åº¦  27
+parameter   			dino_jump3 = 3;	//æé¾™è·³èµ·/è½ä¸‹çš„ç¬¬ä¸‰é«˜åº¦  34
+parameter  			  dino_jump4 = 4;	//æé¾™è·³èµ·çš„æœ€é«˜ä½ç½®       36
+parameter         dino_x = 16;		//æé¾™çš„å·¦ä¾§æ¨ªåæ ‡
+parameter   			dino_x_right = 32;		//æé¾™çš„å³ä¾§æ¨ªåæ ‡
+parameter   			obstacle_high= 26;    //éšœç¢ç‰©é«˜åº¦
+parameter   			width  = 16;						//éšœç¢ç‰©çš„å®½ï¼Œæš‚å®š16//////////////////////////////////////////////
+parameter					division = 50;				//åˆ†é¢‘ç³»æ•°
 
 
 wire[15:0]					obstacle_x_right; 
 
-assign 						pin_up_edge = pin_pos[0]&(!pin_pos[1]);			//pin_up_edge=1,Ôò°´¼üÉÏÉıÑØµ½À´
-assign      			obstacle_x_right = obstacle_x + width;    //ÕÏ°­ÎïµÄÓÒ²à±ßÔµºá×ø±ê
+assign 						pin_up_edge = pin_pos[0]&(!pin_pos[1]);			//pin_up_edge=1,åˆ™æŒ‰é”®ä¸Šå‡æ²¿åˆ°æ¥
+assign      			obstacle_x_right = obstacle_x + width;    //éšœç¢ç‰©çš„å³ä¾§è¾¹ç¼˜æ¨ªåæ ‡
 
 always@(posedge clk or negedge rst)begin
 	if(~rst)begin
@@ -63,41 +65,41 @@ always@(posedge clk or negedge rst)begin
 	end
 	else begin 						
 		pin_pos[1] <= pin_pos[0]; 
-		pin_pos[0] <= in_up;																//¼ì²â°´¼üÉÏÉıÑØ
+		pin_pos[0] <= in_up;																//æ£€æµ‹æŒ‰é”®ä¸Šå‡æ²¿
 
 		
 		case(state)
-			init: begin																			//³õÊ¼»¯
+			init: begin																			//åˆå§‹åŒ–
 				if(pin_up_edge == 1)begin
-					state <= go;																//¼ì²âµ½°´¼ü°´ÏÂºó½øÈë2×´Ì¬
+					state <= go;																//æ£€æµ‹åˆ°æŒ‰é”®æŒ‰ä¸‹åè¿›å…¥2çŠ¶æ€
 					gpu_en <= 1;
 					dino_state <= dino_go;
 				end
 				dino_y <= 16'd0;   
-				obstacle_x	<= 16'd232;							//ÁúÔÚµØÃæ00£¬ÕÏ°­ÎïÔÚx=232´¦
+				obstacle_x	<= 16'd232;							//é¾™åœ¨åœ°é¢00ï¼Œéšœç¢ç‰©åœ¨x=232å¤„
 			end
 			
-			go: begin																			//2×´Ì¬ Õı³£ĞĞ×ß
-				if(dino_state == dino_go)begin							//Ğ¡¿ÖÁúÕı³£ĞĞ½øÖĞ
-					if(pin_up_edge == 1)begin										//°´¼ü°´ÏÂ ½øĞĞÌøÔ¾
-						state <= jump;													//×´Ì¬Ìø×ªÖÁjump
+			go: begin																			//2çŠ¶æ€ æ­£å¸¸è¡Œèµ°
+				if(dino_state == dino_go)begin							//å°æé¾™æ­£å¸¸è¡Œè¿›ä¸­
+					if(pin_up_edge == 1)begin										//æŒ‰é”®æŒ‰ä¸‹ è¿›è¡Œè·³è·ƒ
+						state <= jump;													//çŠ¶æ€è·³è½¬è‡³jump
 						dino_state <= dino_jump1;
 						dino_y <= 16'd0;
 				  end
 				end
-				else begin																		//Ğ¡¿ÖÁúÎ´ÔÚÆ½Ãæ
+				else begin																		//å°æé¾™æœªåœ¨å¹³é¢
 					state <= jump;
 				end
 				
 			end
 																											///////////////////////////////////////////////////
-			jump: begin																		//3×´Ì¬ ÌøÔ¾///////»¹²îgameoverµÄÅĞ¶Ï£¬ÕÏ°­ÎïµÄ¸üĞÂ
+			jump: begin																		//3çŠ¶æ€ è·³è·ƒ///////è¿˜å·®gameoverçš„åˆ¤æ–­ï¼Œéšœç¢ç‰©çš„æ›´æ–°
 				case (dino_state)											//////////////////////////////////////////
 					dino_go:begin
 						if(con1 == division)begin	
 							con_jump <= 0;
 							dino_y <= 16'd0;
-						  state <= go;														//gameoverµÄÅĞ¶ÏÔÚ´Ë´¦¸Ä¶¯
+						  state <= go;														//gameoverçš„åˆ¤æ–­åœ¨æ­¤å¤„æ”¹åŠ¨
 						  con1 <= 0;
 						end
 						else begin
@@ -106,14 +108,14 @@ always@(posedge clk or negedge rst)begin
 					end
 					
 					dino_jump1:begin
-						if(con1 == division)begin																//·ÖÆµ
+						if(con1 == division)begin																//åˆ†é¢‘
 		 					dino_y <= 16'd15;
 		 					con1 <= 0;
-							if(con_jump == 0)begin										//con_jump=0,ÌøÆğ¹ı³Ì
+							if(con_jump == 0)begin										//con_jump=0,è·³èµ·è¿‡ç¨‹
 						  	dino_state <= dino_jump2;
 						  end
 						  else begin
-						  	dino_state <= dino_go;									//con_jump=1 ÂäÏÂ¹ı³Ì
+						  	dino_state <= dino_go;									//con_jump=1 è½ä¸‹è¿‡ç¨‹
 						  end
 						  state <= jump;
 						end
@@ -124,14 +126,14 @@ always@(posedge clk or negedge rst)begin
 					end
 					
 					dino_jump2:begin
-						if(con1 == division)begin											//·ÖÆµ
+						if(con1 == division)begin											//åˆ†é¢‘
 							dino_y <= 16'd27;
 							con1 <= 0;
-						  if(con_jump == 0)begin										//con_jump=0,ÌøÆğ¹ı³Ì
+						  if(con_jump == 0)begin										//con_jump=0,è·³èµ·è¿‡ç¨‹
 						  	dino_state <= dino_jump3;
 						  end
 						  else begin
-						  	dino_state <= dino_jump1;									//con_jump=1 ÂäÏÂ¹ı³Ì
+						  	dino_state <= dino_jump1;									//con_jump=1 è½ä¸‹è¿‡ç¨‹
 						  end
 						  state <= jump;
 						end
@@ -144,11 +146,11 @@ always@(posedge clk or negedge rst)begin
 						if(con1 == division)begin	
 							dino_y <= 16'd34;
 							con1 <= 0;
-						  if(con_jump == 0)begin										//con_jump=0,ÌøÆğ¹ı³Ì
+						  if(con_jump == 0)begin										//con_jump=0,è·³èµ·è¿‡ç¨‹
 						  	dino_state <= dino_jump4;
 						  end
 						  else begin
-						  	dino_state <= dino_jump2;									//con_jump=1 ÂäÏÂ¹ı³Ì
+						  	dino_state <= dino_jump2;									//con_jump=1 è½ä¸‹è¿‡ç¨‹
 						  end
 						  state <= jump;
 						end
@@ -175,14 +177,14 @@ always@(posedge clk or negedge rst)begin
 				
 			end
 			
-			over: begin																		//ÓÎÏ·½áÊø
+			over: begin																		//æ¸¸æˆç»“æŸ
 				
 				if(pin_up_edge == 1)begin
 					obstacle_x <= 16'd240;
-					state <= init;																//¼ì²âµ½°´¼ü°´ÏÂºó½øÈë³õÊ¼×´Ì¬
+					state <= init;																//æ£€æµ‹åˆ°æŒ‰é”®æŒ‰ä¸‹åè¿›å…¥åˆå§‹çŠ¶æ€
 				end
 				else begin
-					gpu_en <= 0;																//¹ØµôÊ¹ÄÜ
+					gpu_en <= 0;																//å…³æ‰ä½¿èƒ½
 					state <= over;
 				end	
 				
@@ -195,18 +197,18 @@ always@(posedge clk or negedge rst)begin
 
 end
 
-always@(posedge clk)begin														//¼ì²âĞ¡¿ÖÁúÊÇ·ñ×²ÉÏÕÏ°­Îï	
+always@(posedge clk)begin														//æ£€æµ‹å°æé¾™æ˜¯å¦æ’ä¸Šéšœç¢ç‰©	
 	if(state == go | state == jump)begin
-		if(con_jump)begin  																//¿ÖÁúÏÂÂä
-			if(obstacle_x_right == dino_x)begin  						//¿ÖÁúµÄ×ó²à×ø±êÓëÕÏ°­ÎïµÄÓÒ²à×ø±êÖØºÏÊ±
-				if(dino_y < obstacle_high)begin								//¿ÖÁúµÄ¸ß¶È Ğ¡ÓëÕÏ°­ÎïµÄ¸ß¶È  ×²ÉÏÁË
+		if(con_jump)begin  																//æé¾™ä¸‹è½
+			if(obstacle_x_right == dino_x)begin  						//æé¾™çš„å·¦ä¾§åæ ‡ä¸éšœç¢ç‰©çš„å³ä¾§åæ ‡é‡åˆæ—¶
+				if(dino_y < obstacle_high)begin								//æé¾™çš„é«˜åº¦ å°ä¸éšœç¢ç‰©çš„é«˜åº¦  æ’ä¸Šäº†
 					state <= over;
 				end
 			end
 		end
-		if(~con_jump) begin																//¿ÖÁúÉÏÉı
-			if(obstacle_x == dino_x_right)begin  						//¿ÖÁúµÄÓÒ²à×ø±êÓëÕÏ°­ÎïµÄ×ó²à×ø±êÖØºÏÊ±
-				if(dino_y < obstacle_high)begin								//¿ÖÁúµÄ¸ß¶È Ğ¡ÓëÕÏ°­ÎïµÄ¸ß¶È  ×²ÉÏÁË
+		if(~con_jump) begin																//æé¾™ä¸Šå‡
+			if(obstacle_x == dino_x_right)begin  						//æé¾™çš„å³ä¾§åæ ‡ä¸éšœç¢ç‰©çš„å·¦ä¾§åæ ‡é‡åˆæ—¶
+				if(dino_y < obstacle_high)begin								//æé¾™çš„é«˜åº¦ å°ä¸éšœç¢ç‰©çš„é«˜åº¦  æ’ä¸Šäº†
 					state <= over;
 				end
 			end
@@ -214,13 +216,13 @@ always@(posedge clk)begin														//¼ì²âĞ¡¿ÖÁúÊÇ·ñ×²ÉÏÕÏ°­Îï
 	end	
 end
 
-always@(posedge clk)begin														//ÕÏ°­ÎïÒÆ¶¯/
+always@(posedge clk)begin														//éšœç¢ç‰©ç§»åŠ¨/
 	if(state == go | state == jump)begin
-		if(obstacle_x < 10)begin							 							//ÅĞ¶ÏÊÇ·ñÉú³ÉĞÂµÄÕÏ°­Îï
+		if(obstacle_x < 10)begin							 							//åˆ¤æ–­æ˜¯å¦ç”Ÿæˆæ–°çš„éšœç¢ç‰©
 			obstacle_x <= 16'd240;
 		end  
-		if(con == division)begin																//Ç§·ÖÆµ£¬¼ÙÉèÏµÍ³Ê±ÖÓÎª10k
-		 	obstacle_x	<= obstacle_x - 8; 										//ÕÏ°­ÎïÔÚx-8´¦,¼´×óÒÆ8	
+		if(con == division)begin																//åƒåˆ†é¢‘ï¼Œå‡è®¾ç³»ç»Ÿæ—¶é’Ÿä¸º10k
+		 	obstacle_x	<= obstacle_x - 8; 										//éšœç¢ç‰©åœ¨x-8å¤„,å³å·¦ç§»8	
 		 	con <= 0;
 		end
 		else begin
