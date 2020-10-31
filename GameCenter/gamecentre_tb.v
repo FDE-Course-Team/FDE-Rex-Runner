@@ -1,3 +1,6 @@
+//2020-10-31
+//gamecentre测试文件
+//作者20212020049 万欣然
 `timescale 10us/1us
 `include "gamecentre.v"
 `define clk_cycle 5
