@@ -48,8 +48,18 @@ echo File "FDE_Rex_Runner_gate.v" and "FDE_Rex_Runner_gate.xml" updated.
 echo Source files have been copied.
 echo Now please run FDE and generated .bit file.
 
-pause
+:loop2
 
-copy /Y .\FDE\FDE_fde_dc.bit .\FDE_Rex_Runner_fde_dc.bit
+sleepx 1
+
+if exist .\FDE\FDE_fde_dc.bit (
+    echo FDE has done its work.
+    copy /Y .\FDE\FDE_fde_dc.bit .\FDE_Rex_Runner_fde_dc.bit
+    del .\FDE\FDE_fde_dc.bit
+) else (
+    goto loop2
+)
+
+echo Successful.
 
 :end

@@ -20,8 +20,8 @@ input [1:0]game_state;
 //--------------------------------
 //----posx and posy definition----
 //--------------------------------
-wire [15:0]posx;
-wire [15:0]posy;
+wire [15:0]posx;//VERIFIED
+wire [15:0]posy;//VERIFIED
 assign posy[5:0]=~addrD[5:0];
 assign posy[15:6]=0;
 // e.g. when addrD[5:0]==0, means driver need pixels in the most upper line,
@@ -55,7 +55,7 @@ assign posy_m_rex_down=posy-rex_down;
 //and posy-rex_top<0,
 //and posy-rex_down>=0, must be inside.
 wire inside_rex;
-assign inside_rex=(~posx_m_rex_left[15])&(posx_m_rex_right[15])&(~posy_m_rex_top[15])&(posy_m_rex_down[15]);
+assign inside_rex=(~posx_m_rex_left[15])&(posx_m_rex_right[15])&(posy_m_rex_top[15])&(~posy_m_rex_down[15]);
 parameter addr_rex=10'd0;
 //--------------------------------
 //-----obstacle bounding def------
@@ -76,7 +76,7 @@ assign posy_m_obstacle_top=posy-obstacle_top;
 wire [15:0]posy_m_obstacle_down;
 assign posy_m_obstacle_down=posy-obstacle_down;
 wire inside_obstacle;
-assign inside_obstacle=(~posx_m_obstacle_left[15])&(posx_m_obstacle_right[15])&(~posy_m_obstacle_top[15])&(posy_m_obstacle_down[15]);
+assign inside_obstacle=(~posx_m_obstacle_left[15])&(posx_m_obstacle_right[15])&(posy_m_obstacle_top[15])&(~posy_m_obstacle_down[15]);
 parameter addr_obstacle=10'd69;
 //--------------------------------
 //-------Some Explanation---------
@@ -93,6 +93,7 @@ parameter addr_obstacle=10'd69;
 // Texture, and get dataT (when inside of something,
 // dataD is connected directly to dataT.)
 assign dataD=(inside_rex|inside_obstacle)?dataT:8'd0;
+// assign dataD=(inside_rex)?8'b1001_0001:(inside_obstacle)?8'b1010_1001:posy[5]?posx[15:8]:8'b1000_0001;//debug
 //--------------------------------
 //----------always block----------
 //--------------------------------

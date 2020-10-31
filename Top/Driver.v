@@ -107,10 +107,13 @@ always@(posedge clk)begin
                     if(start_history[1]==1 && start_i==0)begin//then clear screen and change to ready2
                         y<=0;
                         x<=0;
-                        // db_o<=8'b0011_1110;
-                        db_o<=8'b0011_1111;//try
+                        db_o<=8'b0011_1110;
+                        // db_o<=8'b0011_1111;//try
                         dori_o<=0;
                         state<=READY2;
+                    end
+                    else begin
+                        db_o<=8'b0000_0000;
                     end
                 end
                 default:begin
