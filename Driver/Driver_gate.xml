@@ -1,14 +1,4 @@
 <design name="Driver">
- <port name="addr_o[0]" position="P7"/>
- <port name="addr_o[1]" position="P6"/>
- <port name="addr_o[2]" position="P5"/>
- <port name="addr_o[3]" position="P4"/>
- <port name="addr_o[4]" position="P9"/>
- <port name="addr_o[5]" position="P8"/>
- <port name="addr_o[6]" position="P16"/>
- <port name="addr_o[7]" position="P15"/>
- <port name="addr_o[8]" position="P11"/>
- <port name="addr_o[9]" position="P10"/>
  <port name="data_i[0]" position="P151"/>
  <port name="data_i[1]" position="P148"/>
  <port name="data_i[2]" position="P150"/>
@@ -17,22 +7,27 @@
  <port name="data_i[5]" position="P161"/>
  <port name="data_i[6]" position="P162"/>
  <port name="data_i[7]" position="P163"/>
- <port name="db_o[0]" position="P20"/>
- <port name="db_o[1]" position="P18"/>
- <port name="db_o[2]" position="P17"/>
- <port name="db_o[3]" position="P22"/>
- <port name="db_o[4]" position="P21"/>
- <port name="db_o[5]" position="P23"/>
- <port name="db_o[6]" position="P44"/>
- <port name="db_o[7]" position="P45"/>
- <port name="cs_o[0]" position="P46"/>
- <port name="cs_o[1]" position="P43"/>
+ <port name="db_o[0]" position="P7"/>
+ <port name="db_o[1]" position="P6"/>
+ <port name="db_o[2]" position="P5"/>
+ <port name="db_o[3]" position="P4"/>
+ <port name="db_o[4]" position="P9"/>
+ <port name="db_o[5]" position="P8"/>
+ <port name="db_o[6]" position="P16"/>
+ <port name="db_o[7]" position="P15"/>
+ <port name="cs_o[0]" position="P11"/>
+ <port name="cs_o[1]" position="P10"/>
+ <port name="cs_o[2]" position="P20"/>
+ <port name="cs_o[3]" position="P18"/>
+ <port name="state[0]" position="P17"/>
+ <port name="state[1]" position="P22"/>
+ <port name="state[2]" position="P21"/>
  <port name="clk" position="P77"/>
  <port name="rstn" position="P164"/>
  <port name="start_i" position="P165"/>
- <port name="dori_o" position="P40"/>
- <port name="en_o" position="P41"/>
- <port name="rw_o" position="P42"/>
- <port name="rst_o" position="P33"/>
+ <port name="dori_o" position="P23"/>
+ <port name="en_o" position="P44"/>
+ <port name="rw_o" position="P45"/>
+ <port name="rst_o" position="P46"/>
 
 </design>

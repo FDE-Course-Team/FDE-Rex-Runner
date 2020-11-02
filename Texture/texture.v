@@ -1,4 +1,4 @@
-module texture(
+module Texture(
 addr,
 data
 );
@@ -10,7 +10,7 @@ reg [7:0]data;
 always@(addr)
 begin
 case(addr)
-10'd0: data =  8'h01;//data of the t-rex
+10'd0: data =  8'h01;//data of the t-rex 23*24 (h*w)
 10'd1: data =  8'h01;
 10'd2: data =  8'h01;
 10'd3: data =  8'h01;
@@ -79,7 +79,7 @@ case(addr)
 10'd66: data =  8'h00;
 10'd67: data =  8'h00;
 10'd68: data =  8'hf8;
-10'd69: data =  8'h03;//data of the obstacle
+10'd69: data =  8'h03;//data of the obstacle 22*16 (h*w)
 10'd70: data =  8'h03;
 10'd71: data =  8'h03;
 10'd72: data =  8'h03;

@@ -11,28 +11,29 @@ module Driver(
     cs_o,
     en_o,
     rw_o,
-    rst_o
+    rst_o,
+    state
 );
 
 input clk;
 input rstn;
 input start_i;
 reg [1:0]start_history;
-output [9:0]addr_o;//one LCD_Graphic
+output [10:0]addr_o;//one LCD_Graphic
 input [7:0]data_i;
 // wire [7:0]data_i;//debug
 // assign data_i=8'b00100110;//debug
 
 output reg [7:0]db_o;
-output [1:0]cs_o;
+output [3:0]cs_o;
 output reg en_o;
 output rw_o;
 output reg dori_o;
 output reg rst_o;
 
 reg [5:0]y;
-reg [3:0]x;
-reg [2:0]state;
+reg [4:0]x;
+output reg [2:0]state;
 
 //state machine
 parameter HALT=3'd7;
@@ -49,12 +50,14 @@ parameter TOSHOW=3'd3;
 //state p..q...s...t...........y...
 //state changes when en falls down. (and data/instuction will also be transferred then.)
 
-assign addr_o[9:0]={x[3:0],y[5:0]};
-assign cs_o[0]=~x[3];//CS1
-assign cs_o[1]=x[3];//CS2
-assign rw_o=state[2];
+assign addr_o[10:0]={x[4:0],y[5:0]};
+assign cs_o[0]=(x[4:3]==2'b00);//CS1 of left LCDG
+assign cs_o[1]=(x[4:3]==2'b01);//CS2 of left LCDG
+assign cs_o[2]=(x[4:3]==2'b10);//CS1 of right LCDG
+assign cs_o[3]=(x[4:3]==2'b11);//CS2 of right LCDG
+assign rw_o=0;
 
-always@(posedge clk or negedge rstn)begin
+always@(posedge clk)begin
     if (!rstn) begin
         db_o<=0;
         en_o<=0;
@@ -63,7 +66,6 @@ always@(posedge clk or negedge rstn)begin
         y<=0;
         x<=0;
         state<=HALT;
-
     end
     else begin
         rst_o<=0;
@@ -97,7 +99,7 @@ always@(posedge clk or negedge rstn)begin
                     y<=y+1;
                 end
                 TOSHOW:begin//when TOSHOW, must have sent all data, prepare to show and stop processing.
-                    db_o<=8'b0011_1110;
+                    db_o<=8'b0011_1111;
                     dori_o<=0;
                     state<=HALT;
                 end
@@ -106,8 +108,12 @@ always@(posedge clk or negedge rstn)begin
                         y<=0;
                         x<=0;
                         db_o<=8'b0011_1110;
+                        // db_o<=8'b0011_1111;//try
                         dori_o<=0;
                         state<=READY2;
+                    end
+                    else begin
+                        db_o<=8'b0000_0000;
                     end
                 end
                 default:begin
@@ -119,3 +125,5 @@ always@(posedge clk or negedge rstn)begin
 end
 
 endmodule
+
+// to be tested.
