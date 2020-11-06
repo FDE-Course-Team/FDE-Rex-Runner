@@ -58,6 +58,7 @@ always@(posedge clk or negedge rstn)begin
 		con1		<= 0;
 		con_jump <= 0;
 		dino_state <=0;
+		obstacle_x <=0;
 	end
 	else begin 						
 		pin_pos[1] <= pin_pos[0]; 
