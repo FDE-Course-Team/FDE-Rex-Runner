@@ -1,3 +1,4 @@
+#!/bin/bash
 sharePath=.
 
 while true

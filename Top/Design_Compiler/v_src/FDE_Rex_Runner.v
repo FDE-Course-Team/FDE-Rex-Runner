@@ -1,8 +1,6 @@
 module FDE_Rex_Runner(
-    clk,
+    clk,//120kHz
     rstn,
-
-    start_i,
 
     db_o,
     dori_o,
@@ -14,7 +12,6 @@ module FDE_Rex_Runner(
     );
 
 input clk,rstn;
-input start_i;
 output [7:0]db_o;
 output dori_o;
 output [3:0]cs_o;
@@ -22,6 +19,8 @@ output en_o;
 output rw_o;
 output rst_o;
 output [2:0]state;
+
+wire start;
 
 wire [10:0]addrD;
 wire [7:0]dataD;
@@ -38,7 +37,7 @@ assign game_state=2'b00;//debug
 Driver driver(
     .clk(clk),
     .rstn(rstn),
-    .start_i(start_i),
+    .start_i(start),
     .addr_o(addrD),
     .data_i(dataD),
     // .data_i({1'b1,dataD[6:0]}),
@@ -62,5 +61,6 @@ Decider decider(
     .game_state(game_state)
 );
 Texture texture(.addr(addrT[9:0]),.data(dataT));
+Clock_Divider clock_divider(.clk_120kHz(clk),.rstn(rstn),.clk_12Hz(start));
 
 endmodule

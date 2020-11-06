@@ -1,0 +1,166 @@
+<!-- VeriComm -->
+<PROJECT>
+	<VERSION value="1.1.0.9"/>
+	<FILELIST>
+		<INPUTFILE value="SignalInput4.data"/>
+		<OUTPUTFILE value="SignalOutput4.data"/>
+		<PININFOFILE TYPE="Fudan FPGA XML File" value="FDE_Rex_Runner_gate.xml"/>
+		<USERINPUTFILE>
+			<COUNT value="0"/>
+		</USERINPUTFILE>
+	</FILELIST>
+	<FPGATYPE value="FDP3P7"/>
+	<ZOOM value="1"/>
+	<SKIP value="0"/>
+	<SHOWBITSTART value="0x00"/>
+	<SELECTEDBIT value="0x00"/>
+	<SHOWPIN>
+		<COUNT value="5"/>
+		<PIN value="rstn"/>
+		<PIN value="dori_o"/>
+		<PIN value="en_o"/>
+		<PIN value="rw_o"/>
+		<PIN value="rst_o"/>
+	</SHOWPIN>
+	<SHOWBUS>
+	<COUNT value="3"/>
+	<BUS>
+		<BUSNAME value="db_o"/>
+		<BUSPINCOUNT value="8"/>
+		<SHOWVALUE value="Show_Hex"/>
+		<PIN value="db_o[0]"/>
+		<PIN value="db_o[1]"/>
+		<PIN value="db_o[2]"/>
+		<PIN value="db_o[3]"/>
+		<PIN value="db_o[4]"/>
+		<PIN value="db_o[5]"/>
+		<PIN value="db_o[6]"/>
+		<PIN value="db_o[7]"/>
+	</BUS>
+	<BUS>
+		<BUSNAME value="cs_o"/>
+		<BUSPINCOUNT value="4"/>
+		<SHOWVALUE value="Show_Hex"/>
+		<PIN value="cs_o[0]"/>
+		<PIN value="cs_o[1]"/>
+		<PIN value="cs_o[2]"/>
+		<PIN value="cs_o[3]"/>
+	</BUS>
+	<BUS>
+		<BUSNAME value="state"/>
+		<BUSPINCOUNT value="3"/>
+		<SHOWVALUE value="Show_Hex"/>
+		<PIN value="state[0]"/>
+		<PIN value="state[1]"/>
+		<PIN value="state[2]"/>
+	</BUS>
+	</SHOWBUS>
+	<SHOWPINBUSSEQUENCE>
+		<COUNT value="0"/>
+	</SHOWPINBUSSEQUENCE>
+	<CLOCK NAME="clk" POS="1006"/>
+	<ASIGNPIN>
+		<PININFO NAME="rstn" SHOW="1" OURPOS="0" TYPE="INPUT"/>
+		<PININFO NAME="db_o[0]" SHOW="0" OURPOS="54" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[1]" SHOW="0" OURPOS="55" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[2]" SHOW="0" OURPOS="56" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[3]" SHOW="0" OURPOS="57" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[4]" SHOW="0" OURPOS="58" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[5]" SHOW="0" OURPOS="59" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[6]" SHOW="0" OURPOS="60" TYPE="OUTPUT"/>
+		<PININFO NAME="db_o[7]" SHOW="0" OURPOS="61" TYPE="OUTPUT"/>
+		<PININFO NAME="cs_o[0]" SHOW="0" OURPOS="62" TYPE="OUTPUT"/>
+		<PININFO NAME="cs_o[1]" SHOW="0" OURPOS="63" TYPE="OUTPUT"/>
+		<PININFO NAME="cs_o[2]" SHOW="0" OURPOS="64" TYPE="OUTPUT"/>
+		<PININFO NAME="cs_o[3]" SHOW="0" OURPOS="65" TYPE="OUTPUT"/>
+		<PININFO NAME="state[0]" SHOW="0" OURPOS="66" TYPE="OUTPUT"/>
+		<PININFO NAME="state[1]" SHOW="0" OURPOS="67" TYPE="OUTPUT"/>
+		<PININFO NAME="state[2]" SHOW="0" OURPOS="68" TYPE="OUTPUT"/>
+		<PININFO NAME="dori_o" SHOW="1" OURPOS="69" TYPE="OUTPUT"/>
+		<PININFO NAME="en_o" SHOW="1" OURPOS="70" TYPE="OUTPUT"/>
+		<PININFO NAME="rw_o" SHOW="1" OURPOS="71" TYPE="OUTPUT"/>
+		<PININFO NAME="rst_o" SHOW="1" OURPOS="72" TYPE="OUTPUT"/>
+	</ASIGNPIN>
+	<ASIGNBUS>
+	<COUNT value="3"/>
+	<BUSINFO>
+		<BUSNAME value="db_o"/>
+		<BUSPINCOUNT value="8"/>
+		<BUSPIN USERPOS="0" OURPOS="54"/>
+		<BUSPIN USERPOS="1" OURPOS="55"/>
+		<BUSPIN USERPOS="2" OURPOS="56"/>
+		<BUSPIN USERPOS="3" OURPOS="57"/>
+		<BUSPIN USERPOS="4" OURPOS="58"/>
+		<BUSPIN USERPOS="5" OURPOS="59"/>
+		<BUSPIN USERPOS="6" OURPOS="60"/>
+		<BUSPIN USERPOS="7" OURPOS="61"/>
+	</BUSINFO>
+	<BUSINFO>
+		<BUSNAME value="cs_o"/>
+		<BUSPINCOUNT value="4"/>
+		<BUSPIN USERPOS="0" OURPOS="62"/>
+		<BUSPIN USERPOS="1" OURPOS="63"/>
+		<BUSPIN USERPOS="2" OURPOS="64"/>
+		<BUSPIN USERPOS="3" OURPOS="65"/>
+	</BUSINFO>
+	<BUSINFO>
+		<BUSNAME value="state"/>
+		<BUSPINCOUNT value="3"/>
+		<BUSPIN USERPOS="0" OURPOS="66"/>
+		<BUSPIN USERPOS="1" OURPOS="67"/>
+		<BUSPIN USERPOS="2" OURPOS="68"/>
+	</BUSINFO>
+	</ASIGNBUS>
+	<CONDITIONALSAVE>
+	<COUNT value="7"/>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="dori_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="en_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="rw_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="rst_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="db_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="cs_o"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	<SIGNAL>
+		<COUNT value="0"/>
+		<SIGNALNAME value="state"/>
+		<CHECKBOX value="0"/>
+		<SAVEAFTERTRIGGER value="0"/>
+	</SIGNAL>
+	</CONDITIONALSAVE>
+	<CONDITIONALSTOP>
+		<COUNT value="0"/>
+		<CHECKBOX value="0"/>
+	</CONDITIONALSTOP>
+	<COMPAREFILELIST>
+	<COUNT value="0"/>
+	</COMPAREFILELIST>
+</PROJECT>

@@ -11,11 +11,13 @@ if exist %sharePath%\DC-Done.txt (
 copy /Y ..\Driver\Driver.v .\Driver.v
 copy /Y ..\Decider\Decider.v .\Decider.v
 copy /Y ..\Texture\Texture.v .\Texture.v
+copy /Y ..\Clock_Divider\Clock_Divider.v .\Clock_Divider.v
 
 copy /Y .\FDE_Rex_Runner.v %sharePath%\v_src\FDE_Rex_Runner.v
 copy /Y .\Driver.v %sharePath%\v_src\Driver.v
 copy /Y .\Decider.v %sharePath%\v_src\Decider.v
 copy /Y .\Texture.v %sharePath%\v_src\Texture.v
+copy /Y .\Clock_Divider.v %sharePath%\v_src\Clock_Divider.v
 
 echo Driver > %sharePath%\DC-Start.txt
 
@@ -23,7 +25,7 @@ echo waiting for Design Compiler...
 
 :loop
 
-sleepx 1
+.\sleepx.exe 1
 
 if exist %sharePath%\DC-Done.txt (
     echo Design Compiler responed.
@@ -47,10 +49,11 @@ echo File "FDE_Rex_Runner_gate.v" and "FDE_Rex_Runner_gate.xml" updated.
 
 echo Source files have been copied.
 echo Now please run FDE and generated .bit file.
+echo Remind to change place/route constraint file in FDE compile configure, if you copied this whole project.
 
 :loop2
 
-sleepx 1
+.\sleepx.exe 1
 
 if exist .\FDE\FDE_fde_dc.bit (
     echo FDE has done its work.

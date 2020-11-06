@@ -8,7 +8,7 @@
 set SRC_HOME			"/mnt/hgfs/FDE_Rex_Runner/v_src"
 set LIB_HOME			"/home/allenwalker/project/lib"
 set LIBRARY_NAME	"fde_dc"
-set FILE_LIST			"FDE_Rex_Runner Driver Decider Texture"
+set FILE_LIST			"FDE_Rex_Runner Driver Decider Texture Clock_Divider GameCenter"
 set RESULT_HOME		"/mnt/hgfs/FDE_Rex_Runner/result"
 
 #set WIRELOAD_NAME "ForQA"

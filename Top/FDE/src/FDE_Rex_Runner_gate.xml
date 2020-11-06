@@ -16,7 +16,6 @@
  <port name="state[2]" position="P21"/>
  <port name="clk" position="P77"/>
  <port name="rstn" position="P151"/>
- <port name="start_i" position="P148"/>
  <port name="dori_o" position="P23"/>
  <port name="en_o" position="P44"/>
  <port name="rw_o" position="P45"/>

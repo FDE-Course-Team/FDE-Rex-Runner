@@ -4,3 +4,4 @@
 *.sim/
 Quartus/
 *fde_dc_*
+*.tmp
