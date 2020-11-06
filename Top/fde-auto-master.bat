@@ -8,18 +8,15 @@ if exist %sharePath%\DC-Done.txt (
     del /f %sharePath%\DC-Done.txt
 )
 
-copy /Y ..\Driver\Driver.v .\Driver.v
-copy /Y ..\Decider\Decider.v .\Decider.v
-copy /Y ..\Texture\Texture.v .\Texture.v
-copy /Y ..\Clock_Divider\Clock_Divider.v .\Clock_Divider.v
+for /f "skip=1" %%s in (modules.txt) do (
+    copy /Y ..\%%s\%%s.v .\%%s.v
+)
 
-copy /Y .\FDE_Rex_Runner.v %sharePath%\v_src\FDE_Rex_Runner.v
-copy /Y .\Driver.v %sharePath%\v_src\Driver.v
-copy /Y .\Decider.v %sharePath%\v_src\Decider.v
-copy /Y .\Texture.v %sharePath%\v_src\Texture.v
-copy /Y .\Clock_Divider.v %sharePath%\v_src\Clock_Divider.v
+for /f %%s in (modules.txt) do (
+    copy /Y .\%%s.v %sharePath%\v_src\%%s.v
+)
 
-echo Driver > %sharePath%\DC-Start.txt
+echo FDE_Rex_Runner > %sharePath%\DC-Start.txt
 
 echo waiting for Design Compiler...
 

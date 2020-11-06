@@ -10,60 +10,22 @@ Running PRESTO HDLC
 Presto compilation completed successfully.
 Elaborated 1 design.
 Current design is now 'FDE_Rex_Runner'.
-Information: Re-analyzing the out of date architecture 'Driver(verilog)'. (LBR-15)
-Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v
-Presto compilation completed successfully.
+Warning: Cannot find the design 'Driver' in the library 'WORK'. (LBR-1)
 Information: Building the design 'Driver'. (HDL-193)
-
-Statistics for case statements in always block at line 60 in file
-	'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|            76            |    auto/auto     |
-===============================================
-
-Inferred memory devices in process
-	in routine Driver line 60 in file
-		'/mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|  start_history_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
-|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
-|        x_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
-|     dori_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|      rst_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|      db_o_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|        y_reg        | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
-|      en_o_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully.
+Warning: Cannot find the design 'Driver' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'Decider' in the library 'WORK'. (LBR-1)
 Information: Building the design 'Decider'. (HDL-193)
-
-Inferred memory devices in process
-	in routine Decider line 100 in file
-		'/mnt/hgfs/FDE_Rex_Runner/v_src/Decider.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|      addrT_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully.
+Warning: Cannot find the design 'Decider' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'GameCenter' in the library 'WORK'. (LBR-1)
+Information: Building the design 'GameCenter'. (HDL-193)
+Warning: Cannot find the design 'GameCenter' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'Texture' in the library 'WORK'. (LBR-1)
 Information: Building the design 'Texture'. (HDL-193)
-Presto compilation completed successfully.
+Warning: Cannot find the design 'Texture' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'Clock_Divider' in the library 'WORK'. (LBR-1)
 Information: Building the design 'Clock_Divider'. (HDL-193)
-
-Inferred memory devices in process
-	in routine Clock_Divider line 12 in file
-		'/mnt/hgfs/FDE_Rex_Runner/v_src/Clock_Divider.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|      cnt5k_reg      | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
-|    clk_12Hz_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully.
+Warning: Cannot find the design 'Clock_Divider' in the library 'WORK'. (LBR-1)
+Warning: Design 'FDE_Rex_Runner' has '5' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Running PRESTO HDLC
 Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Driver.v
 Presto compilation completed successfully.
@@ -93,7 +55,6 @@ Inferred memory devices in process
 |      en_o_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Driver.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'Driver'.
 Running PRESTO HDLC
@@ -110,7 +71,6 @@ Inferred memory devices in process
 |      addrT_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Decider.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'Decider'.
 Running PRESTO HDLC
@@ -118,7 +78,6 @@ Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/Texture.v
 Presto compilation completed successfully.
 Running PRESTO HDLC
 Presto compilation completed successfully.
-Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/texture.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'texture'.
 Running PRESTO HDLC
@@ -136,19 +95,227 @@ Inferred memory devices in process
 |    clk_12Hz_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Warning: Overwriting design file '/mnt/hgfs/FDE_Rex_Runner/Clock_Divider.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'Clock_Divider'.
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v
+Warning:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:50: the undeclared symbol 'pin_up_edge' assumed to have the default net type, which is 'wire'. (VER-936)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
 Current design is 'FDE_Rex_Runner'.
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Information: Building the design 'Texture'. (HDL-193)
+Presto compilation completed successfully.
+Warning: Design 'texture' was renamed to 'texture_1' to avoid
+	a conflict with another design that has the same name but
+different parameters. (LINK-17)
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
+Warning: Design 'FDE_Rex_Runner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Current design is 'FDE_Rex_Runner'.
 
   Linking design 'FDE_Rex_Runner'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (5 designs)               /mnt/hgfs/FDE_Rex_Runner/FDE_Rex_Runner.db, etc
+  * (6 designs)               /mnt/hgfs/FDE_Rex_Runner/FDE_Rex_Runner.db, etc
   fde_dc (library)            /home/allenwalker/project/lib/fde_dc.db
 
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
+Warning: Design 'FDE_Rex_Runner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Updating graph... (UID-83)
+Warning: Design 'FDE_Rex_Runner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -159,7 +326,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 11 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 14 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -172,6 +339,72 @@ Information: The register 'decider/addrT_reg[13]' will be removed. (OPT-1207)
 Information: The register 'decider/addrT_reg[12]' will be removed. (OPT-1207)
 Information: The register 'decider/addrT_reg[11]' will be removed. (OPT-1207)
 Information: The register 'decider/addrT_reg[10]' will be removed. (OPT-1207)
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -179,21 +412,68 @@ Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-1
 
   Beginning Implementation Selection
   ----------------------------------
-  Processing 'DW01_add_width5'
-  Processing 'DW01_add_width16'
-  Processing 'DW01_incdec_width13'
-  Processing 'DW01_inc_width6'
+  Processing 'DW01_sub_width7'
+  Processing 'DW01_add_width13'
   Processing 'DW01_sub_width16'
-  Processing 'DW01_add_width16'
+  Processing 'DW01_add_width5'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_sub_width16'
   Processing 'DW02_mult_A_width13_B_width5'
   Processing 'DW01_add_width16'
-  Processing 'DW01_sub_width16'
-  Processing 'DW01_sub_width16'
-  Processing 'DW01_sub_width6'
   Processing 'DW01_incdec_width6'
-  Processing 'DW01_sub_width7'
-  Processing 'DW01_sub_width16'
-  Processing 'DW01_sub_width16'
+  Processing 'DW01_inc_width6'
+  Processing 'DW01_sub_width6'
+Information: Timing loop detected. (OPT-150)
+	U342/A0N U342/Y r50/U1_0/B r50/U1_0/S U292/A1N U292/Y r250/U2_0/A r250/U2_0/S 
+Information: Timing loop detected. (OPT-150)
+	U340/A0N U340/Y r50/U1_1/B r50/U1_1/S U291/A1N U291/Y r250/U2_1/A r250/U2_1/S 
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U342'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U340'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U326'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U324'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U322'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U320'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U318'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U316'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U314'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U312'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_15'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_15'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_14'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_14'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_13'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_13'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_12'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_12'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_11'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_11'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_10'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_10'
+         to break a timing loop. (OPT-314)
+  Processing 'DW01_add_width16'
 
   Beginning Mapping Optimizations  (Medium effort)
   -------------------------------
@@ -204,21 +484,19 @@ Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-1
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1042.0      0.00       0.0      40.0                          
-    0:00:01    1046.0      0.00       0.0       4.5                          
-    0:00:01    1045.0      0.00       0.0       0.3                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1435.0      0.00       0.0      18.5                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
 
 
 
@@ -229,9 +507,20 @@ Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-1
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1436.0      0.00       0.0      16.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02    1436.0      0.00       0.0      16.1                          
+    0:00:02    1451.0      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -241,25 +530,92 @@ Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-1
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1047.0      0.00       0.0       0.0                          
-    0:00:01    1015.0      0.00       0.0       0.0                          
-    0:00:01    1003.0      0.00       0.0       0.0                          
-    0:00:01    1001.0      0.00       0.0       0.0                          
-    0:00:01    1000.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
-    0:00:01     999.0      0.00       0.0       0.0                          
+    0:00:02    1451.0      0.00       0.0       0.0                          
+    0:00:02    1451.0      0.00       0.0       0.0                          
+    0:00:02    1406.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
+    0:00:02    1401.0      0.00       0.0       0.0                          
 Loading db file '/home/allenwalker/project/lib/fde_dc.db'
 
   Optimization Complete
   ---------------------
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
+Warning: Design 'FDE_Rex_Runner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Warning: Design has no hierarchy.  No cells can be ungrouped. (UID-228)
+Warning: Design 'FDE_Rex_Runner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Alib files are up-to-date.
 Loading db file '/eda/synopsys/dc2013/libraries/syn/dw_foundation.sldb'
 Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
@@ -274,16 +630,130 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 4 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Loaded alib file './alib-52/fde_dc.db.alib'
 
   Beginning Pass 1 Mapping  (Incremental)
   ------------------------
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
 
   Updating timing information
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	U342/A0N U342/Y U498/A U498/Y U864/A1N U864/Y U455/B U455/Y 
+Information: Timing loop detected. (OPT-150)
+	U340/A0N U340/Y r50/U1_1/B r50/U1_1/S U862/A1N U862/Y r250/U2_1/A r250/U2_1/S 
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U342'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U340'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U326'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U324'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U322'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U320'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U318'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U316'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U314'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0N' and 'Y' on cell 'U312'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_15'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_15'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_14'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_14'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_13'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_13'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_12'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_12'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_11'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_11'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_10'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'S' on cell 'r250/U2_10'
+         to break a timing loop. (OPT-314)
 Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-108)
 
   Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
@@ -299,74 +769,140 @@ Information: Design 'FDE_Rex_Runner' has no optimization constraints set. (OPT-1
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:00     999.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
-    0:00:00     999.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
+    0:00:01    1383.0      0.00       0.0       0.0                          
 Loading db file '/home/allenwalker/project/lib/fde_dc.db'
 
   Optimization Complete
   ---------------------
+Information: Building the design 'GameCenter'. (HDL-193)
+
+Statistics for case statements in always block at line 53 in file
+	'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine GameCenter line 53 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dino_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      rex_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   obstacle_x_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pin_pos_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       con_reg       |   Latch   |  10   |  Y  | N  | Y  | N  | -  | -  | -  |
+|      con1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    con_jump_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 194 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     state_reg2      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine GameCenter line 213 in file
+		'/mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   obstacle_x_reg2   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      con_reg2       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[12]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[11]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[10]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[8]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[6]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[5]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[4]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[3]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[2]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'obstacle_x[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[1]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'state[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  /mnt/hgfs/FDE_Rex_Runner/v_src/GameCenter.v:53: Net 'con[9]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+*** Presto compilation terminated with 19 errors. ***
+Warning: Unable to resolve reference 'GameCenter' in 'FDE_Rex_Runner'. (LINK-5)
 Writing verilog file '/mnt/hgfs/FDE_Rex_Runner/result/FDE_Rex_Runner_gate.v'.
 Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1

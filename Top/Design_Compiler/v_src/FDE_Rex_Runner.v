@@ -2,6 +2,8 @@ module FDE_Rex_Runner(
     clk,//120kHz
     rstn,
 
+    jmp_key,
+
     db_o,
     dori_o,
     cs_o,
@@ -12,6 +14,7 @@ module FDE_Rex_Runner(
     );
 
 input clk,rstn;
+input jmp_key;
 output [7:0]db_o;
 output dori_o;
 output [3:0]cs_o;
@@ -28,11 +31,11 @@ wire [15:0]addrT;
 wire [7:0]dataT;
 
 wire [15:0]rex_down;
-assign rex_down=16'd0;//debug
+// assign rex_down=16'd0;//debug
 wire [15:0]obstacle_left;
-assign obstacle_left=16'd55;//debug
+// assign obstacle_left=16'd55;//debug
 wire [1:0]game_state;
-assign game_state=2'b00;//debug
+// assign game_state=2'b00;//debug
 
 Driver driver(
     .clk(clk),
@@ -40,7 +43,6 @@ Driver driver(
     .start_i(start),
     .addr_o(addrD),
     .data_i(dataD),
-    // .data_i({1'b1,dataD[6:0]}),
     .db_o(db_o),
     .dori_o(dori_o),
     .cs_o(cs_o),
@@ -59,6 +61,14 @@ Decider decider(
     .rex_down(rex_down),
     .obstacle_left(obstacle_left),
     .game_state(game_state)
+);
+GameCenter gamecenter(
+    .clk(clk),
+    .rstn(rstn),
+    .in_up(jmp_key),						//input ,to jump
+    .rex_y(rex_down),				   //小恐龙位置(y的偏移量)7bit   0/15/27/34/36 
+    .obstacle_x(obstacle_left),      //障碍物位置(x的偏移量)9bit
+    .state(game_state)
 );
 Texture texture(.addr(addrT[9:0]),.data(dataT));
 Clock_Divider clock_divider(.clk_120kHz(clk),.rstn(rstn),.clk_12Hz(start));

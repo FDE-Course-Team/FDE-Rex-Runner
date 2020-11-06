@@ -31,11 +31,11 @@ wire [15:0]addrT;
 wire [7:0]dataT;
 
 wire [15:0]rex_down;
-assign rex_down=16'd0;//debug
+// assign rex_down=16'd0;//debug
 wire [15:0]obstacle_left;
-assign obstacle_left=16'd55;//debug
+// assign obstacle_left=16'd55;//debug
 wire [1:0]game_state;
-assign game_state=2'b00;//debug
+// assign game_state=2'b00;//debug
 
 Driver driver(
     .clk(clk),
@@ -68,7 +68,7 @@ GameCenter gamecenter(
     .in_up(jmp_key),						//input ,to jump
     .rex_y(rex_down),				   //小恐龙位置(y的偏移量)7bit   0/15/27/34/36 
     .obstacle_x(obstacle_left),      //障碍物位置(x的偏移量)9bit
-    .state()
+    .state(game_state)
 );
 Texture texture(.addr(addrT[9:0]),.data(dataT));
 Clock_Divider clock_divider(.clk_120kHz(clk),.rstn(rstn),.clk_12Hz(start));
