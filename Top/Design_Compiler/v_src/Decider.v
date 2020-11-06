@@ -34,7 +34,7 @@ assign posx[15:8]=0;
 //--------------------------------
 //----rex bounding definition-----
 //--------------------------------
-parameter rex_height=16'd23;
+parameter rex_height=16'd25;
 parameter rex_width=16'd24;
 parameter rex_left=16'd8;
 parameter rex_right=rex_left+rex_width;
@@ -60,7 +60,7 @@ parameter addr_rex=10'd0;
 //--------------------------------
 //-----obstacle bounding def------
 //--------------------------------
-parameter obstacle_height=16'd22;
+parameter obstacle_height=16'd28;
 parameter obstacle_width=16'd16;
 //input [15:0]obstacle_left;
 wire [15:0]obstacle_right;
@@ -77,7 +77,7 @@ wire [15:0]posy_m_obstacle_down;
 assign posy_m_obstacle_down=posy-obstacle_down;
 wire inside_obstacle;
 assign inside_obstacle=(~posx_m_obstacle_left[15])&(posx_m_obstacle_right[15])&(posy_m_obstacle_top[15])&(~posy_m_obstacle_down[15]);
-parameter addr_obstacle=10'd69;
+parameter addr_obstacle=10'd75;
 //--------------------------------
 //-------Some Explanation---------
 //--------------------------------
