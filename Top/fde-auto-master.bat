@@ -48,6 +48,7 @@ echo Source files have been copied.
 echo Now please run FDE and generated .bit file.
 echo Remind to change place/route constraint file in FDE compile configure, if you copied this whole project.
 
+
 :loop2
 
 .\sleepx.exe 1

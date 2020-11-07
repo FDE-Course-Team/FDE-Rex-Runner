@@ -47,22 +47,22 @@
 <property name="xdllibfile_q" value="&quot;${xdllibfile}&quot;"/>
 <property name="interconlib_q" value="&quot;${interconlib}&quot;"/>
 <property name="plcdelayfile_q" value="&quot;${plcdelayfile}&quot;"/>
-<property name=".timestamp" value="0"/>
+<property name=".timestamp" value="1604737464522"/>
 <property name="imp.timestamp" value="0"/>
-<property name="map.timestamp" value="0"/>
-<property name="pack.timestamp" value="0"/>
-<property name="place.timestamp" value="1604638584681"/>
-<property name="route.timestamp" value="1604638584681"/>
+<property name="map.timestamp" value="1604729637423"/>
+<property name="pack.timestamp" value="1604729637423"/>
+<property name="place.timestamp" value="1604729637423"/>
+<property name="route.timestamp" value="1604729637423"/>
 <property name="sta.timestamp" value="0"/>
 <property name="bit.timestamp" value="0"/>
 <property name="prog.timestamp" value="0"/>
 <property name="imp_cst.timestamp" value="0"/>
 <property name="pack.mode" value=""/>
-<property name="place.mode" value="-b"/>
+<property name="place.mode" value="-t"/>
 <property name="route.mode" value="-d"/>
-<property name="mapfile.mode" value=""/>
-<property name="packfile.mode" value=""/>
-<property name="routefile.mode" value=""/>
+<property name="mapfile.mode" value="-v ${mapfile}"/>
+<property name="packfile.mode" value="-s ${packfile}"/>
+<property name="routefile.mode" value="-i ${cilfile_q} -v ${routefile}"/>
 <property name="prog.mode" value="usb"/>
 <property name="prog.format" value="mcs"/>
 <property name="prog.port" value="888"/>
@@ -70,10 +70,10 @@
 <property name="prog.usb.args" value="${bitfile}"/>
 <property name="sta.sim" value="false"/>
 <property name="sta.pnum" value="10"/>
-<property name="place.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
-<property name="place.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
-<property name="route.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
-<property name="route.cstfile" value="D:\Workspace\Git-Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
+<property name="place.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
+<property name="place.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
+<property name="route.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
+<property name="route.cstfile" value="E:\Git_Workspace\FDE-Rex-Runner\Top\FDE\src\FDE_Rex_Runner_gate.xml"/>
 <target name="cst.check">
 		<condition property="cst.exist">
 			<available file="${place.cstfile}" type="file"/>

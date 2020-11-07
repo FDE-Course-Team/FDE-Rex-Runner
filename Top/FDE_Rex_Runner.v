@@ -36,6 +36,7 @@ wire [15:0]obstacle_left;
 // assign obstacle_left=16'd55;//debug
 wire [1:0]game_state;
 // assign game_state=2'b00;//debug
+wire clk24Hz;
 
 Driver driver(
     .clk(clk),
@@ -59,18 +60,20 @@ Decider decider(
     .addrT(addrT),
     .dataT(dataT),
     .rex_down(rex_down),
+    // .rex_down(16'd15),
     .obstacle_left(obstacle_left),
     .game_state(game_state)
 );
 GameCenter gamecenter(
-    .clk(clk),
+    .clk120kHz(clk),
+    .clk24Hz(clk24Hz),
     .rstn(rstn),
     .in_up(jmp_key),						//input ,to jump
-    .rex_y(rex_down),				   //小恐龙位置(y的偏移量)7bit   0/15/27/34/36 
-    .obstacle_x(obstacle_left),      //障碍物位置(x的偏移量)9bit
-    .state(game_state)
+    .rex_down(rex_down),				   //小恐龙位置(y的偏移量)7bit   0/15/27/34/36 
+    .obs_left(obstacle_left),      //障碍物位置(x的偏移量)9bit
+    .game_state(game_state)
 );
 Texture texture(.addr(addrT[9:0]),.data(dataT));
-Clock_Divider clock_divider(.clk_120kHz(clk),.rstn(rstn),.clk_12Hz(start));
+Clock_Divider clock_divider(.clk120kHz(clk),.rstn(rstn),.clk12Hz(start),.clk24Hz(clk24Hz));
 
 endmodule
