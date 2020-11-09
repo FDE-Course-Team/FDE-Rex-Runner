@@ -28,6 +28,12 @@ parameter				init = 0;				//初始化状态
 parameter				playing = 1;				//正常行进状态
 parameter				over = 3;				//游戏结束
 
+////坐标定义
+//小恐龙rex和障碍物obs(obstacle)均需要定义上下左右四个边框的位置和宽与高，其中左边框和下边框
+//表示的坐标包含图片本身的像素坐标，而右边框和上边框则不包含。例如一个32x32大小的图片，左下角
+//位置坐标为(4,5)，那么其左边框为4，在(4,10)处确有一个像素属于此图片，而右边框为36，在(36,10)
+//处已不是该图片的像素。
+
 parameter				rex_height = 25;
 parameter				rex_width = 24;
 parameter         		rex_left = 8;		//恐龙的左侧横坐标
@@ -59,6 +65,12 @@ always@(posedge clk120kHz or negedge rstn)begin
 end
 
 ////rex_jmp_list
+//作为小恐龙跳跃时的高度查找表
+//ptr代替状态机，从list的头（head）查找到尾（tail）然后再反向查找到头。
+//头部存放的数据是地面，尾部存放的数据是最高点。
+//rex_falling代表的是查找方向，如果rex_falling为1，代表正在下落，那么ptr就会自减，除非本身已经到头；
+//如果rex_falling为0，代表正在上升，那么ptr就会自增，直到ptr与tail重合，就将rex_falling赋为1让其下降回查。
+//这样设计的一个好处就是，如果需要修改小恐龙跳跃的时长、连贯性等，则只需要调整rex_jmp_list的长度和内容。
 
 parameter rex_jmp_list_len=12;
 parameter rex_jmp_list_tail=rex_jmp_list_len-1;

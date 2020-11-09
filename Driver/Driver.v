@@ -3,8 +3,8 @@ module Driver(
     rstn,
 
     start_i,
-    addr_o,
-    data_i,
+    addr_o,//driver向decider索求的地址。这也是“当前显示到”的像素条的位置。
+    data_i,//decider返回的数据信息，可作为像素条给入。
 
     db_o,
     dori_o,
@@ -107,8 +107,9 @@ always@(posedge clk)begin
                     if(start_history[1]==1 && start_i==0)begin//then clear screen and change to ready2
                         y<=0;
                         x<=0;
-                        // db_o<=8'b0011_1110;//clear. may cause blinking.
-                        db_o<=8'b0000_0000;//do not clear
+                        // db_o<=8'b0011_1110;//This 8'b0011_1110 is the instruction to turn off the whole LCD_Graphic!!!
+                                                //do not trust the SMIMS help info too much...
+                        db_o<=8'b0000_0000;//do nothing
                         dori_o<=0;
                         state<=READY2;
                     end
